@@ -1,6 +1,7 @@
 //////////////////////////////////////////////////////////////////////
 //
-// toplevel for dram controller de0 nano board
+// DE0 Nano 开发板 SDRAM 控制器顶层模块
+// 用于控制 SDRAM 存储器的读写操作
 //
 //////////////////////////////////////////////////////////////////////
 //
@@ -28,167 +29,178 @@
 //////////////////////////////////////////////////////////////////////
 
 module toplevel (
-    input         sys_clk_pad_i,
-    input         rst_n_pad_i,
-    input         btn_n_pad_i,
+    // 系统时钟和复位信号
+    input         sys_clk_pad_i,    // 系统时钟输入 (50MHz)
+    input         rst_n_pad_i,      // 复位信号，低电平有效
+    input         btn_n_pad_i,      // 按键输入，低电平有效
 
-    output [1:0]  sdram_ba_pad_o,
-    output [12:0] sdram_a_pad_o,
-    output        sdram_cs_n_pad_o,
-    output        sdram_ras_pad_o,
-    output        sdram_cas_pad_o,
-    output        sdram_we_pad_o,
-    inout  [15:0] sdram_dq_pad_io,
-    output [1:0]  sdram_dqm_pad_o,
-    output        sdram_cke_pad_o,
-    output        sdram_clk_pad_o,
+    // SDRAM 控制信号
+    output [1:0]  sdram_ba_pad_o,   // SDRAM 存储体地址
+    output [12:0] sdram_a_pad_o,    // SDRAM 行/列地址总线
+    output        sdram_cs_n_pad_o, // SDRAM 片选信号，低电平有效
+    output        sdram_ras_pad_o,  // 行地址选通信号，低电平有效
+    output        sdram_cas_pad_o,  // 列地址选通信号，低电平有效
+    output        sdram_we_pad_o,   // 写使能信号，低电平有效
+    inout  [15:0] sdram_dq_pad_io,  // SDRAM 数据总线，双向16位
+    output [1:0]  sdram_dqm_pad_o,  // 数据掩码信号
+    output        sdram_cke_pad_o,  // 时钟使能信号
+    output        sdram_clk_pad_o,  // SDRAM 时钟输出
 
-    inout [7:0]   gpio0_io,  /* LEDs */
-    input [3:0]   gpio1_i    /* DIPs */
+    // GPIO 接口
+    inout [7:0]   gpio0_io,         // GPIO0：LED 指示灯
+    input [3:0]   gpio1_i           // GPIO1：DIP 开关
 );
 
-wire clk100m;
-wire clk1m;
+// 时钟信号定义
+wire clk100m;  // 100MHz 时钟，用于 SDRAM 控制器
+wire clk1m;    // 1MHz 时钟，用于用户接口
 
+// SDRAM 时钟输出直接使用 100MHz 时钟
 assign sdram_clk_pad_o = clk100m;
 
-// PLLs
+// 锁相环 (PLL) 实例化
+// 生成 100MHz 时钟用于 SDRAM 控制器
 pll_100m pll_100mi (
-    .inclk0      (sys_clk_pad_i),
-    .c0          (clk100m)
+    .inclk0      (sys_clk_pad_i),  // 输入时钟 50MHz
+    .c0          (clk100m)         // 输出 100MHz 时钟
 );
 
+// 生成 1MHz 时钟用于用户接口
 pll_1m pll_1mi (
-    .inclk0      (sys_clk_pad_i),
-    .c0          (clk1m)
+    .inclk0      (sys_clk_pad_i),  // 输入时钟 50MHz
+    .c0          (clk1m)           // 输出 1MHz 时钟
 );
 
-// Cross Clock FIFOs
-/* Address 24-bit and 16-bit Data transfers from in:1m out:100m */
+// 跨时钟域 FIFO 模块
+// 用于在 1MHz 用户接口和 100MHz SDRAM 控制器之间传输数据
 
-/* 1 mhz side wires */
-wire [39:0] wr_fifo;
-wire wr_enable;      /* wr_enable ] <-> [ wr : wr_enable to push fifo */
-wire wr_full;        /* wr_full   ] <-> [ full : signal that we are full */
-/* 100mhz side wires */
-wire [39:0] wro_fifo;
-wire ctrl_busy;       /* rd ] <-> [ busy : pop fifo when ctrl not busy */
-wire ctrl_wr_enable;  /* .empty_n-wr_enable : signal ctrl data is ready */
+// 写操作 FIFO：24位地址 + 16位数据 = 40位
+// 1MHz 用户接口侧信号
+wire [39:0] wr_fifo;       // 写数据：高24位为地址，低16位为数据
+wire wr_enable;            // 写使能信号：用户接口向 FIFO 写入数据
+wire wr_full;              // FIFO 满信号：防止用户接口继续写入
 
+// 100MHz SDRAM 控制器侧信号
+wire [39:0] wro_fifo;      // 从 FIFO 读出的数据
+wire ctrl_busy;            // 控制器忙信号：用于从 FIFO 读取数据
+wire ctrl_wr_enable;       // 控制器写使能：FIFO 非空时有效
+
+// 写操作 FIFO 实例化 (40位宽度)
 fifo #(.BUS_WIDTH(40)) wr_fifoi (
-    .wr_clk        (clk1m),
-    .rd_clk        (clk100m),
-    .wr_data       (wr_fifo),
-    .rd_data       (wro_fifo),
-    .rd            (ctrl_busy),
-    .wr            (wr_enable),
-    .full          (wr_full),
-    .empty_n       (ctrl_wr_enable),
-    .rst_n         (rst_n_pad_i)
+    .wr_clk        (clk1m),         // 写时钟：1MHz
+    .rd_clk        (clk100m),       // 读时钟：100MHz
+    .wr_data       (wr_fifo),       // 写数据输入
+    .rd_data       (wro_fifo),      // 读数据输出
+    .rd            (ctrl_busy),     // 读使能：控制器忙时读取
+    .wr            (wr_enable),     // 写使能：用户接口写入
+    .full          (wr_full),       // FIFO 满信号
+    .empty_n       (ctrl_wr_enable), // FIFO 非空信号
+    .rst_n         (rst_n_pad_i)    // 复位信号
 );
 
-/* Address 24-bit transfers from in:1m out:100m */
-/* 1 mhz side wires */
-wire        rd_enable;  /*  rd_enable -wr : rd_enable to push rd addr to fifo */
-wire        rdaddr_full;/* rdaddr_full-full : signal we cannot read more */
+// 读地址 FIFO：仅传输 24位地址
+// 1MHz 用户接口侧信号
+wire        rd_enable;     // 读使能信号：用户接口请求读操作
+wire        rdaddr_full;   // 读地址 FIFO 满信号：防止继续请求读操作
 
-/* 100mhz side wires */
-wire [23:0] rdao_fifo;
-wire ctrl_rd_enable;     /* empty_n - rd_enable: signal ctrl addr ready */
+// 100MHz SDRAM 控制器侧信号
+wire [23:0] rdao_fifo;     // 从 FIFO 读出的地址
+wire ctrl_rd_enable;       // 控制器读使能：FIFO 非空时有效
 
+// 读地址 FIFO 实例化 (24位宽度)
 fifo #(.BUS_WIDTH(24)) rdaddr_fifoi (
-    .wr_clk        (clk1m),
-    .rd_clk        (clk100m),
-    .wr_data       (wr_fifo[39:16]),
-    .rd_data       (rdao_fifo),
-    .rd            (ctrl_busy),
-    .wr            (rd_enable),
-    .full          (rdaddr_full),
-    .empty_n       (ctrl_rd_enable),
-    .rst_n         (rst_n_pad_i)
+    .wr_clk        (clk1m),         // 写时钟：1MHz
+    .rd_clk        (clk100m),       // 读时钟：100MHz
+    .wr_data       (wr_fifo[39:16]), // 写数据：从写 FIFO 的地址部分获取
+    .rd_data       (rdao_fifo),     // 读数据输出
+    .rd            (ctrl_busy),     // 读使能：控制器忙时读取
+    .wr            (rd_enable),     // 写使能：用户接口请求读操作
+    .full          (rdaddr_full),   // FIFO 满信号
+    .empty_n       (ctrl_rd_enable), // FIFO 非空信号
+    .rst_n         (rst_n_pad_i)    // 复位信号
 );
 
-/* 100mhz side wires */
-wire [15:0] rddo_fifo;
-wire ctrl_rd_ready;     /* wr - rd_ready - push data from dram to fifo */
+// 读数据 FIFO：传输从 SDRAM 读取的 16位数据
+// 100MHz SDRAM 控制器侧信号
+wire [15:0] rddo_fifo;      // 控制器输出的读数据
+wire ctrl_rd_ready;         // 控制器读数据就绪信号：数据可从 SDRAM 读取
 
-/* 1mhz side wires */
-wire [15:0] rddata_fifo;
-wire        rd_ready;   /* rd_ready-empty_n- signal interface data ready */
-wire        rd_ack;     /* rd_ack - rd     - pop fifo after data read */
+// 1MHz 用户接口侧信号
+wire [15:0] rddata_fifo;    // 用户接口接收的读数据
+wire        rd_ready;       // 读数据就绪信号：数据可供用户接口读取
+wire        rd_ack;         // 读确认信号：用户接口确认数据已读取
 
-/* Incoming 16-bit data transfers from in:100m out:1m */
+// 读数据 FIFO 实例化 (16位宽度)
+// 数据流向：100MHz (控制器) -> 1MHz (用户接口)
 fifo #(.BUS_WIDTH(16)) rddata_fifoi (
-    .wr_clk        (clk100m),
-    .rd_clk        (clk1m),
-    .wr_data       (rddo_fifo),
-    .rd_data       (rddata_fifo),
-    .rd            (rd_ack),
-    .wr            (ctrl_rd_ready),
-    .full          (),
-    .empty_n       (rd_ready),
-    .rst_n         (rst_n_pad_i)
+    .wr_clk        (clk100m),       // 写时钟：100MHz
+    .rd_clk        (clk1m),         // 读时钟：1MHz
+    .wr_data       (rddo_fifo),     // 写数据输入：来自控制器
+    .rd_data       (rddata_fifo),   // 读数据输出：发送给用户接口
+    .rd            (rd_ack),        // 读使能：用户接口确认读取
+    .wr            (ctrl_rd_ready), // 写使能：控制器数据就绪
+    .full          (),              // 未使用的满信号
+    .empty_n       (rd_ready),      // FIFO 非空信号：数据就绪
+    .rst_n         (rst_n_pad_i)    // 复位信号
 );
 
 
-/* SDRAM */
-
-
+// SDRAM 控制器实例化
 sdram_controller sdram_controlleri (
-    /* HOST INTERFACE */
-    .wr_addr       (wro_fifo[39:16]),
-    .wr_data       (wro_fifo[15:0]),
-    .wr_enable     (ctrl_wr_enable), 
+    /* 主机接口信号 */
+    .wr_addr       (wro_fifo[39:16]), // 写地址：24位
+    .wr_data       (wro_fifo[15:0]),  // 写数据：16位
+    .wr_enable     (ctrl_wr_enable),  // 写使能信号
 
-    .rd_addr       (rdao_fifo), 
-    .rd_data       (rddo_fifo),
-    .rd_ready      (ctrl_rd_ready),
-    .rd_enable     (ctrl_rd_enable),
+    .rd_addr       (rdao_fifo),       // 读地址：24位
+    .rd_data       (rddo_fifo),       // 读数据：16位
+    .rd_ready      (ctrl_rd_ready),   // 读数据就绪信号
+    .rd_enable     (ctrl_rd_enable),  // 读使能信号
     
-    .busy          (ctrl_busy),
-    .rst_n         (rst_n_pad_i),
-    .clk           (clk100m),
+    .busy          (ctrl_busy),       // 控制器忙信号
+    .rst_n         (rst_n_pad_i),     // 复位信号
+    .clk           (clk100m),         // 控制器时钟：100MHz
 
-    /* SDRAM SIDE */
-    .addr          (sdram_a_pad_o),
-    .bank_addr     (sdram_ba_pad_o),
-    .data          (sdram_dq_pad_io),
-    .clock_enable  (sdram_cke_pad_o),
-    .cs_n          (sdram_cs_n_pad_o),
-    .ras_n         (sdram_ras_pad_o),
-    .cas_n         (sdram_cas_pad_o),
-    .we_n          (sdram_we_pad_o),
-    .data_mask_low (sdram_dqm_pad_o[0]),
-    .data_mask_high(sdram_dqm_pad_o[1])
+    /* SDRAM 物理接口信号 */
+    .addr          (sdram_a_pad_o),      // SDRAM 地址总线
+    .bank_addr     (sdram_ba_pad_o),     // SDRAM 存储体地址
+    .data          (sdram_dq_pad_io),    // SDRAM 数据总线
+    .clock_enable  (sdram_cke_pad_o),    // 时钟使能
+    .cs_n          (sdram_cs_n_pad_o),   // 片选信号
+    .ras_n         (sdram_ras_pad_o),    // 行地址选通
+    .cas_n         (sdram_cas_pad_o),    // 列地址选通
+    .we_n          (sdram_we_pad_o),     // 写使能
+    .data_mask_low (sdram_dqm_pad_o[0]), // 低字节数据掩码
+    .data_mask_high(sdram_dqm_pad_o[1])  // 高字节数据掩码
 );
 
+// 系统忙信号：当任何 FIFO 满时，系统忙
 wire        busy;
-
 assign busy = wr_full | rdaddr_full;
 
+// DE0 Nano 用户接口实例化
 dnano_interface #(.HADDR_WIDTH(24)) dnano_interfacei (
-  /* Human Interface */
-    .button_n     (btn_n_pad_i), 
-    .dip          (gpio1_i),
-    .leds         (gpio0_io),
+    /* 人机交互接口 */
+    .button_n     (btn_n_pad_i),   // 按键输入
+    .dip          (gpio1_i),       // DIP 开关输入
+    .leds         (gpio0_io),      // LED 输出
 
-  /* Controller Interface */
-    .haddr        (wr_fifo[39:16]),// RW-FIFO- data1
-    .busy         (busy),          // RW-FIFO- full
+    /* 控制器接口 */
+    .haddr        (wr_fifo[39:16]), // 主机地址：24位地址
+    .busy         (busy),           // 系统忙信号
   
-    .wr_enable    (wr_enable),     // WR-FIFO- write
-    .wr_data      (wr_fifo[15:00]),// WR-FIFO- data2
+    .wr_enable    (wr_enable),      // 写使能信号
+    .wr_data      (wr_fifo[15:00]), // 写数据：16位数据
   
-    .rd_enable    (rd_enable),     // RO-FIFO- write
+    .rd_enable    (rd_enable),      // 读使能信号
   
-    .rd_data      (rddata_fifo),   // RI-FIFO- data
-    .rd_rdy       (rd_ready),      // RI-FIFO-~empty
-    .rd_ack       (rd_ack),        // RI-FIFO- read
+    .rd_data      (rddata_fifo),    // 读数据：16位数据
+    .rd_rdy       (rd_ready),       // 读数据就绪信号
+    .rd_ack       (rd_ack),         // 读确认信号
 
-  /* basics */
-    .rst_n        (rst_n_pad_i), 
-    .clk          (clk1m)
-
+    /* 基础信号 */
+    .rst_n        (rst_n_pad_i),    // 复位信号
+    .clk          (clk1m)           // 时钟信号：1MHz
 );
 
 endmodule // toplevel
