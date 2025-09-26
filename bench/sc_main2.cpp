@@ -6,7 +6,7 @@
 #include "Vtoplevel.h"
 
 using namespace sc_core;
-using namespace sc_dt;
+using namespace sc_dt;	//data types
 
 int sc_main(int argc, char* argv[]) {
     Verilated::commandArgs(argc, argv);
@@ -14,12 +14,14 @@ int sc_main(int argc, char* argv[]) {
 
     // 时钟：10ns 周期=100MHz（PLL 仿真桩会把它直通到 100M/1M 两路）
     sc_clock sysclk("sysclk", sc_time(10, SC_NS));
+	// 对比 sc_core::sc_clock sysclk("sysclk", sc_core::sc_time(10, sc_core::SC_NS)); 
 
-    // 输入信号
+    // 输入信号，有显示名字，方便调试
     sc_signal<bool> rst_n{"rst_n"};
     sc_signal<bool> btn_n{"btn_n"};
+	//sc_bv 是“bit vector”，更适合表示引脚/总线的按位值（不做算术）
     sc_signal<sc_bv<4>> gpio1{"gpio1"};
-
+	
     // 输出/三态信号
     sc_signal<sc_bv<2>>  sdram_ba{"sdram_ba"};
     sc_signal<sc_bv<13>> sdram_a{"sdram_a"};
@@ -58,7 +60,11 @@ int sc_main(int argc, char* argv[]) {
     top.trace(tfp, 99);
     tfp->open("wave.vcd");
 
-    // 驱动线程：复位、单击、双击、延时退出
+	// 驱动线程（sc_spawn lambda）：复位、单击、双击、延时退出
+	//初始化 rst_n/btn_n/gpio1； 
+	//for 10 次 posedge 等待：wait(sysclk.posedge_event())；再释放复位； 
+	//初始化等待 50 周期； 定义 press(low_cycles) 按键序列：拉低若干周期，再拉高并等 50 周期； 按序执行单击→双击→再次单击→长时间运行； 
+	//最后 sc_stop(); 这是 SystemC 典型写法：通过事件等待（posedge_event）在时钟边沿同步推进。
     sc_spawn([&](){
         rst_n = false;
         btn_n = true;
@@ -92,6 +98,8 @@ int sc_main(int argc, char* argv[]) {
     });
 
     // 打印线程：每 100 周期打印一次 SDRAM 关键信号
+	// 循环 wait(posedge)，计数到 100 的倍数输出关键 SDRAM 信号； 
+	// 用 sc_time_stamp().to_string() 打印当前 SystemC 时间。 两个线程并发执行，由 SystemC 调度器在每个事件点进行协同。
     sc_spawn([&](){
         unsigned long long cyc = 0;
         while (true) {
