@@ -1,6 +1,33 @@
 单纯有个txt方便建文件夹
 方便交流
 
+
+
+
+
+V2
+Generating SDRAM DPI headers
+xmvlog: *W,SPDUSD: Include directory .. given but not used.
+        Top level design units:
+                $unit_0x2b178cf3
+                uvm_pkg
+                cdns_uvmapi
+                cdns_assert2uvm_pkg
+                cdns_uvm_pkg
+                sdram_model_if
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+xrun: *W,CSSF: HDL source files with -R option will be ignored.
+xrun: *E,NOSTUP: A problem was detected in the setup for simulation. Simulation can be done only after successfully completing design file parsing and elaboration. Check the command line for any unintentional errors, like the omission of the -name or the -xmlibdirname option or the -xmlibdirpath option, if these were used for parsing earlier.
+
+
+
+
+
+
+
+
+
+V1
 # C++ search paths (for C++ files)
 -I../sdram
 -I../sim
@@ -17,7 +44,7 @@
 -scautoshell verilog
 -scautoshell SYSTEMC
 
-
+V1
 xmvlog: *E,COFILX (../sdram/sdram_model_if.sv,5|31): cannot open include file 'sdram/sdram_types.svh'.
   mailbox #(sdram_rsp_t) rsp_mbx = new();
                       |
