@@ -1,6 +1,23 @@
 单纯有个txt方便建文件夹
 方便交流
 
+# C++ search paths (for C++ files)
+-I../sdram
+-I../sim
+-I../sc-standalone
+-I../sc-standalone/verilator_include
+-I.
+
+# SystemVerilog include paths (for `include statements)
+# Note: +incdir is for SystemVerilog, -I is for C++
++incdir+../sdram
++incdir+..
++incdir+.
+
+-scautoshell verilog
+-scautoshell SYSTEMC
+
+
 xmvlog: *E,COFILX (../sdram/sdram_model_if.sv,5|31): cannot open include file 'sdram/sdram_types.svh'.
   mailbox #(sdram_rsp_t) rsp_mbx = new();
                       |
