@@ -1,4 +1,13 @@
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+xrun: *W,MESSQ: Cannot specify both the -messages and -q options on the command line.  The -q option will be used.
+xmvlog: *W,LIBNOF: Library file or directory "2" does not exist.
+xmsc_run: *W,TBFILEARG: 'xmsc.log' from
+          Command line (arg 34)
+          does not have a recognized file extension, and is not recognized as
+          a legal argument. This argument will be ignored.
+xmsc_run: *N,TBDEP: Test will be regenerated due to changes in
+          1-step/3-step mode
+rm: cannot remove './xcelium.d/run.lnx8664.24.09.d': Directory not empty
 $CDSROOT = /sw/CDS/XCELIUM_24_09_004
 $TESTDIR = /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim
 
@@ -35,9 +44,9 @@ xmsc C++ parameters:
 		-I$CDSROOT/tools/include
 		-pipe"
 
-xmsc: compiling $TESTDIR/sdram_dpi_bridge.cpp
-make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:542: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 253
-xmsc: /dev/shm/avs_local_builds/avs_ramdisk_client_rifclx786/systemc/src/frontend/wrapper/processEDGRep.cpp:2257: int processOneFunction(trModuleT&, const char*, a_routine_ptr): Assertion `il_func->memory_region != ((a_memory_region_number)0)' failed.
+xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:540: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 2
+xmsc: *F,BADCLP: The -CDSLIB argument's path $TESTDIR/./xcelium.d/run.lnx8664.24.09.d/cdsrun.lib does not exist or is not readable.
 xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
