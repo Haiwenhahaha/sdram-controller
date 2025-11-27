@@ -1,5 +1,10 @@
 单纯有个txt方便建文件夹
 方便交流
+V8
+xrun: *E,OPT2ND: option (-v) requires an argument.
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+xrun: *SE,BDOPT: Unknown option -xmsclog.
+
 
 V3
 
