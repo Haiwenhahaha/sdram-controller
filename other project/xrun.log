@@ -1,5 +1,5 @@
 xrun(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s004: Started on Nov 27, 2025 at 15:17:41 CET
+TOOL:	xrun(64)	24.09-s004: Started on Nov 27, 2025 at 16:04:16 CET
 xrun
 	-f run_sdram.f
 		+UVM_NO_RELNOTES
@@ -30,13 +30,895 @@ xrun
 	-gui
 	-access +rwc
 	-messages
-	-xmscargs -messages
+	-xmscargs "-messages -verbose -logfile xmsc.log"
 
    User defined plus("+") options:
 	+UVM_NO_RELNOTES
 	+UVM_VERBOSITY=HIGH
 
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d
+file: ../sdram/sdram_model_if.sv
+	package worklib.sdram_types_pkg:svh
+		errors: 0, warnings: 0
+	interface worklib.sdram_model_if:sv
+		errors: 0, warnings: 0
+file: ../sdram/sdram_model_wrapper.sv
+	module worklib.sdram_model_wrapper:sv
+		errors: 0, warnings: 0
+file: ../sdram/sdram_pkg.sv
+	package worklib.sdram_pkg:sv
+		errors: 0, warnings: 0
+file: ../sdram/sdram_tb_top.sv
+	module worklib.sdram_tb_top:sv
+		errors: 0, warnings: 0
+logfile set to /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/xmsc_run.log
+Reading specs from /sw/CDS/XCELIUM_24_09_004/tools/systemc/files/specs/specfile.lnx86.gnu.64bit
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(/sw/CDS/XCELIUM_24_09_004/tools/systemc/files/specs/specfile.lnx86.gnu.64bit)
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+Load spec variable: SYSC_LIB_PREFIX -- ${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3  
+Load spec variable: SYSC_GNU_BIN -- ${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin  
+Load spec variable: SYSC_GNU_LIB -- ${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64  
+Load spec variable: SYSC_AR_EXTRA --   
+Load spec variable: SYSC_GDB -- ${NCSC_CDS_ROOT}/tools/bin/64bit/gdb  
+Load spec variable: VLOG_FILE_EXT -- sv:v:vp:vh:vs  
+Load spec variable: VHDL_FILE_EXT -- vhd:vhdl:VHD:VHDL:vhdp:VHDP  
+Load spec variable: NCSC_NCV_ARG -- +loadsc+${NCTESTNAME} +xmsimargs+-loadcfc +xmsimargs+:cfcbootstrap  
+Load spec variable: NCSC_NCV_ARG_STATIC -- +xmsimargs+-loadcfc +xmsimargs+:cfcbootstrap  
+Load spec variable: NCSC_NCVHDL_COMPILE_ARG --   
+Load spec variable: NCSC_NCVLOG_COMPILE_ARG --   
+Load spec variable: NCSC_NCELAB_ARG -- -loadsc ${NCTESTNAME}  
+Load spec variable: NCSC_NCELAB_ARG_COLON -- -loadsc ${NCTESTDIR}/${NCTESTNAME}  
+Load spec variable: NCSC_NCELAB_ARG_STATIC --   
+Load spec variable: NCSC_NCSIM_ARG -- -loadcfc :cfcbootstrap  
+Load spec variable: CC_BIN_PREFIX --   
+Load spec variable: CXX_BIN_PREFIX --   
+Load spec variable: CC_LIB_PREFIX --   
+Load spec variable: CXX_LIB_PREFIX --   
+Load spec variable: NCSC_CC -- gcc  
+Load spec variable: CC -- gcc  
+Load spec variable: NCSC_CXX -- xmsc -COMPILER ${SYSC_GNU_BIN}/g++   
+Load spec variable: CXX -- ${SYSC_GNU_BIN}/g++  
+Load spec variable: NCSC_CC -- ${SYSC_GNU_BIN}/gcc  
+Load spec variable: CC -- ${SYSC_GNU_BIN}/gcc  
+Load spec variable: AR -- ar  
+Load spec variable: AROPTS -- cru  
+Load spec variable: LINKER -- ${SYSC_GNU_BIN}/g++  
+Load spec variable: LD -- ld  
+Load spec variable: AS -- $CC  
+Load spec variable: CC_PIC_OPT -- -fPIC  
+Load spec variable: CXX_PIC_OPT -- -fPIC  
+Load spec variable: CC_COMPILE_OPT -- -D_GLIBCXX_USE_CXX11_ABI=1 -c  
+Load spec variable: CXX_COMPILE_OPT -- -D_GLIBCXX_USE_CXX11_ABI=1 -c  
+Load spec variable: CC_DEBUG_OPT --   
+Load spec variable: CXX_DEBUG_OPT -- -O0 -g  
+Load spec variable: CC_INCLUDE_OPT -- -I  
+Load spec variable: CXX_INCLUDE_OPT -- -I  
+Load spec variable: CC_DEP_OPT -- -M -MMD  
+Load spec variable: CXX_DEP_OPT -- -M -MMD  
+Load spec variable: DEP_FILE_EXTENSION -- d  
+Load spec variable: NCSC_CC_OPTS -- -x c   
+Load spec variable: NCSC_CXX_OPTS -- -x c++   
+Load spec variable: NCSC_CC_WARN -- -Wall  
+Load spec variable: NCSC_CXX_WARN -- -Wall  
+Load spec variable: LINKER_SHARED_LIB_OPT -- -L/lib64 -lrt -shared -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR}  
+Load spec variable: LINKER_LIB_DIR_OPT -- -L  
+Load spec variable: LINKER_LIB_OPT -- -l  
+Load spec variable: DPI_COMP_OPTIONS -- -fPIC  
+Load spec variable: DPI_LINK_OPTIONS --   
+Load spec variable: NC_LD_ARGS -- -fPIC -rdynamic  
+Load spec variable: NC_SYSTEM_LIBS -- -L/lib64 -ldl -lm -lpthread -lrt -L${NCSC_CDS_ROOT}/tools/lib/64bit  
+Load spec variable: CVE_LIBS -- -L${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s -L${NCSC_CDS_ROOT}/tools/lib -L${NCSC_CDS_ROOT}/tools/tbsc/lib/64bit/gnu/9.3 -L${NCSC_CDS_ROOT}/tools/lib/64bit/SuSE -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${NCSC_CDS_ROOT}/tools/tbsc/lib/64bit/gnu/9.3:${NCSC_CDS_ROOT}/tools/lib/64bit/SuSE:${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64 -ltbsc -lscv -lbfd  
+Load spec variable: CVE_LIB_PATH -- lib/64bit/gnu/9.3  
+Load spec variable: VIC_LIBS -- -L${NCSC_CDS_ROOT}/tools/vic/lib/64bit/gnu/9.3 -Wl,-rpath,${NCSC_CDS_ROOT}/tools/vic/lib/64bit/gnu/9.3 -lvicutil -lvic  
+Load spec variable: VIC_LIB_PATH -- lib/64bit/gnu/9.3  
+Load spec variable: NCELAB_STATIC_LD_ARGS -- \
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids  
+Load spec variable: NCELAB_STATIC_LD_ARGS_ARCHIVE -- \
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           ${SYSC_LIB_PREFIX}/sc_fpi_xm.o ${SYSC_LIB_PREFIX}/xmscpi.o            \
+           %%{USER_LD_ARGS}                                 \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -lsystemc_ar \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS} \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids  
+Load spec variable: NCSIM_STATIC_LD_ARGS -- \
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids  
+Load spec variable: NCSIM_STATIC_LD_ARGS_ARCHIVE -- \
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           ${SYSC_LIB_PREFIX}/sc_fpi_xm.o ${SYSC_LIB_PREFIX}/xmscpi.o            \
+           %%{USER_LD_ARGS}                                  \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -lsystemc_ar \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS} \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids  
+Load spec variable: NCSC_NCV_TEST_LD_ARGS --   
+Load spec variable: NCSC_NCV_TEST_LD_ARGS_SUFFIX -- -shared  
+Load spec variable: NCSC_NCVHDL_TEST_LD_ARGS --   
+Load spec variable: NCSC_NCVHDL_TEST_LD_ARGS_SUFFIX -- -shared  
+Load spec variable: NCSC_LD_ARGS --   
+Load spec variable: NCSC_NCV_TEST_LD_ARGS_ARCHIVE -- ${SYSC_LIB_PREFIX}/sc_fpi_xm.o ${SYSC_LIB_PREFIX}/xmscpi.o  
+Load spec variable: NCSC_NCVHDL_TEST_LD_ARGS_ARCHIVE -- ${SYSC_LIB_PREFIX}/sc_fpi_xm.o ${SYSC_LIB_PREFIX}/xmscpi.o  
+Load spec variable: CC_FILE_EXT -- c  
+Load spec variable: CXX_FILE_EXT -- cc:cpp:C  
+Load spec variable: HH_FILE_EXT -- h:hh  
+Load spec variable: OBJ_FILE_EXT -- a:o:so  
+Load spec variable: AS_FILE_EXT -- s  
+Load spec variable: SH_LIB_EXT -- so  
+Load spec variable: PURIFYPLUS_NC_OPTIONS -- -ignore-signals=SIGSEGV,SIGILL,SIGPOLL,SIGEMT -linker=${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/bin/ld -recursion-depth-limit=0  
+Load spec variable: PERL -- /usr/local/bin/perl   
+Load spec variable: NCSC_MAKE -- make   
+Load spec variable: SH -- /bin/sh  
+Load spec variable: STD_BIN_DIR -- /usr/bin  
+LOOK FOR: DEP_FILE_EXTENSION   () () (d)  HASH(HASH(0x1b54c90))
+get_var_value: DEP_FILE_EXTENSION => d
+LOOK FOR: SH_LIB_EXT   () () (so)  HASH(HASH(0x1b54c90))
+get_var_value: SH_LIB_EXT => so
+LOOK FOR: NC_CXX_MAIN   () (/sw/CDS/XCELIUM_24_09_004/tools/inca/src/main.cc) ()  HASH(HASH(0x1b54c90))
+get_var_value: NC_CXX_MAIN => /sw/CDS/XCELIUM_24_09_004/tools/inca/src/main.cc
+LOOK FOR: NCSC_MAKE   () () (make )  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_MAKE => make 
+Default simulator set to XMSIM
+LOOK FOR: DPI_COMP_OPTIONS   () () (-fPIC)  HASH(HASH(0x1b54c90))
+get_var_value: DPI_COMP_OPTIONS => -fPIC
+LOOK FOR: DPI_LINK_OPTIONS   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: DPI_LINK_OPTIONS => 
+LOOK FOR: NCSC_CC   () () (${SYSC_GNU_BIN}/gcc)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/gcc
+get_var_value: NCSC_CC => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/gcc
+LOOK FOR: NCSC_CXX   () () (xmsc -COMPILER ${SYSC_GNU_BIN}/g++ )  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = xmsc -COMPILER /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++ 
+get_var_value: NCSC_CXX => xmsc -COMPILER /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++ 
+LOOK FOR: LINKER   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: LINKER => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+LOOK FOR: CC_INCLUDE_OPT   () () (-I)  HASH(HASH(0x1b54c90))
+get_var_value: CC_INCLUDE_OPT => -I
+LOOK FOR: CXX_INCLUDE_OPT   () () (-I)  HASH(HASH(0x1b54c90))
+get_var_value: CXX_INCLUDE_OPT => -I
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+LOOK FOR: PURIFYPLUS_STACK   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: PURIFYPLUS_STACK => 
+LOOK FOR: CC_PIC_OPT   () () (-fPIC)  HASH(HASH(0x1b54c90))
+get_var_value: CC_PIC_OPT => -fPIC
+LOOK FOR: CXX_PIC_OPT   () () (-fPIC)  HASH(HASH(0x1b54c90))
+get_var_value: CXX_PIC_OPT => -fPIC
+LOOK FOR: NCSC_CC_WARN   () () (-Wall)  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CC_WARN => -Wall
+LOOK FOR: NCSC_CXX_WARN   () () (-Wall)  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CXX_WARN => -Wall
+LOOK FOR: CC_COMPILE_OPT   () () (-D_GLIBCXX_USE_CXX11_ABI=1 -c)  HASH(HASH(0x1b54c90))
+get_var_value: CC_COMPILE_OPT => -D_GLIBCXX_USE_CXX11_ABI=1 -c
+LOOK FOR: CXX_COMPILE_OPT   () () (-D_GLIBCXX_USE_CXX11_ABI=1 -c)  HASH(HASH(0x1b54c90))
+get_var_value: CXX_COMPILE_OPT => -D_GLIBCXX_USE_CXX11_ABI=1 -c
+LOOK FOR: NCSC_CC_OPTS   () () (-x c )  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CC_OPTS => -x c 
+LOOK FOR: NCSC_CXX_OPTS   () () (-x c++ )  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CXX_OPTS => -x c++ 
+LOOK FOR: CC_DEBUG_OPT   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: CC_DEBUG_OPT => 
+LOOK FOR: CXX_DEBUG_OPT   () () (-O0 -g)  HASH(HASH(0x1b54c90))
+get_var_value: CXX_DEBUG_OPT => -O0 -g
+LOOK FOR: LINKER_LIB_DIR_OPT   () () (-L)  HASH(HASH(0x1b54c90))
+get_var_value: LINKER_LIB_DIR_OPT => -L
+LOOK FOR: LINKER_LIB_OPT   () () (-l)  HASH(HASH(0x1b54c90))
+get_var_value: LINKER_LIB_OPT => -l
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+LOOK FOR: SYSC_AR_EXTRA   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: SYSC_AR_EXTRA => 
+LOOK FOR: NCELAB_STATIC_LD_ARGS   () () (\
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_GNU_LIB   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+get_var_value: SYSC_GNU_LIB => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+  replacing SYSC_GNU_LIB with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  replacing SYSC_LIB_PREFIX with /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  replacing SYSC_LIB_PREFIX with /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_UVM_LIBDIR   () (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_UVM_LIBDIR => /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  replacing NCSC_UVM_LIBDIR with /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_UVM_LIBDIR   () (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_UVM_LIBDIR => /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  replacing NCSC_UVM_LIBDIR with /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           ${NC_LD_ARGS}                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NC_LD_ARGS   () () (-fPIC -rdynamic)  HASH(HASH(0x1b54c90))
+get_var_value: NC_LD_ARGS => -fPIC -rdynamic
+  replacing NC_LD_ARGS with -fPIC -rdynamic
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -fPIC -rdynamic                                   \
+           ${NC_SYSTEM_LIBS}                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NC_SYSTEM_LIBS   () () (-L/lib64 -ldl -lm -lpthread -lrt -L${NCSC_CDS_ROOT}/tools/lib/64bit)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+get_var_value: NC_SYSTEM_LIBS => -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+  replacing NC_SYSTEM_LIBS with -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -fPIC -rdynamic                                   \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                   \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                 \
+           %%{OBJ_CXX_FILES}                                \
+           %%{OBJ_AS_FILES}                                 \
+           %%{OBJ_SAFE_FILES}                               \
+           %%{USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -fPIC -rdynamic                                   \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                   \
+           %%{EFENCE_LIBS} -L/sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit -lvoids
+get_var_value: NCELAB_STATIC_LD_ARGS => \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmelab.o  \
+           ${CXX_MAIN_OBJ}                                 \
+           ${OBJ_CC_FILES}                                 \
+           ${OBJ_CXX_FILES}                                \
+           ${OBJ_AS_FILES}                                 \
+           ${OBJ_SAFE_FILES}                               \
+           ${USER_LD_ARGS}                                 \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -fPIC -rdynamic                                   \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                   \
+           ${EFENCE_LIBS} -L/sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSIM_STATIC_LD_ARGS   () () (\
+           ${NCSC_CDS_ROOT}/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L${SYSC_GNU_LIB} -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_GNU_LIB   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+get_var_value: SYSC_GNU_LIB => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+  replacing SYSC_GNU_LIB with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L${NCSC_CDS_ROOT}/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L${SYSC_LIB_PREFIX} -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  replacing SYSC_LIB_PREFIX with /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  replacing SYSC_LIB_PREFIX with /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:${NCSC_UVM_LIBDIR} -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_UVM_LIBDIR   () (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_UVM_LIBDIR => /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  replacing NCSC_UVM_LIBDIR with /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L${NCSC_UVM_LIBDIR} -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_UVM_LIBDIR   () (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_UVM_LIBDIR => /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  replacing NCSC_UVM_LIBDIR with /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L${NCSC_CDS_ROOT}/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit -ludm   \
+           ${NC_LD_ARGS}                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NC_LD_ARGS   () () (-fPIC -rdynamic)  HASH(HASH(0x1b54c90))
+get_var_value: NC_LD_ARGS => -fPIC -rdynamic
+  replacing NC_LD_ARGS with -fPIC -rdynamic
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit -ludm   \
+           -fPIC -rdynamic                                     \
+           ${NC_SYSTEM_LIBS}                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NC_SYSTEM_LIBS   () () (-L/lib64 -ldl -lm -lpthread -lrt -L${NCSC_CDS_ROOT}/tools/lib/64bit)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+get_var_value: NC_SYSTEM_LIBS => -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+  replacing NC_SYSTEM_LIBS with -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit -ludm   \
+           -fPIC -rdynamic                                     \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                          \
+           %%{EFENCE_LIBS} -L${NCSC_CDS_ROOT}/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           %%{CXX_MAIN_OBJ}                                 \
+           %%{OBJ_CC_FILES}                                  \
+           %%{OBJ_CXX_FILES}                                 \
+           %%{OBJ_AS_FILES}                                  \
+           %%{OBJ_SAFE_FILES}                                \
+           %%{USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit -ludm   \
+           -fPIC -rdynamic                                     \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                          \
+           %%{EFENCE_LIBS} -L/sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit -lvoids
+get_var_value: NCSIM_STATIC_LD_ARGS => \
+           /sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit/xmsim.o    \
+           ${CXX_MAIN_OBJ}                                 \
+           ${OBJ_CC_FILES}                                  \
+           ${OBJ_CXX_FILES}                                 \
+           ${OBJ_AS_FILES}                                  \
+           ${OBJ_SAFE_FILES}                                \
+           ${USER_LD_ARGS}                                  \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64 -lstdc++ -lgcc_s \
+	   -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit          \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3 -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -lsystemc_sh -lscBootstrap_sh -lxmscCoroutines_sh -lovm -lxmsctlm2_sh -L/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit -luvm \
+           -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit -ludm   \
+           -fPIC -rdynamic                                     \
+           -L/lib64 -ldl -lm -lpthread -lrt -L/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit                                          \
+           ${EFENCE_LIBS} -L/sw/CDS/XCELIUM_24_09_004/tools/inca/lib/64bit -lvoids
+LOOK FOR: NCELAB_EXE   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCELAB_EXE => 
+LOOK FOR: NCSIM_EXE   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSIM_EXE => 
+LOOK FOR: NCSC_LD_ARGS   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_LD_ARGS => 
+LOOK FOR: RECORD_LD_ARGS   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: RECORD_LD_ARGS => 
+LOOK FOR: SYSC_GNU_LIB   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/install/lib64)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+get_var_value: SYSC_GNU_LIB => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+check for /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64/libtb_tr_sst2_gcc_2.95
+check for ./libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/64bit/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/tbsc/lib/64bit/gnu/9.3/libtb_tr_sst2_gcc_2.95
+check for /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/libtb_tr_sst2_gcc_2.95
+check for /usr/local/lib/libtb_tr_sst2_gcc_2.95
+check for /usr/lib/libtb_tr_sst2_gcc_2.95
+check for /usr/local/lib/libtb_tr_sst2_gcc_2.95
+check for /usr/lib/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/libtb_tr_sst2_gcc_2.95
+check for /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64/libtb_tr_sst2_gcc_2.95.so
+check for ./libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/64bit/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/tbsc/lib/64bit/gnu/9.3/libtb_tr_sst2_gcc_2.95.so
+check for /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/libtb_tr_sst2_gcc_2.95.so
+check for /usr/local/lib/libtb_tr_sst2_gcc_2.95.so
+check for /usr/lib/libtb_tr_sst2_gcc_2.95.so
+check for /usr/local/lib/libtb_tr_sst2_gcc_2.95.so
+check for /usr/lib/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/libtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/install/lib64/liblibtb_tr_sst2_gcc_2.95.so
+check for ./liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/64bit/liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/lib/liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit/liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3/liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/tools/tbsc/lib/64bit/gnu/9.3/liblibtb_tr_sst2_gcc_2.95.so
+check for /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/liblibtb_tr_sst2_gcc_2.95.so
+check for /usr/local/lib/liblibtb_tr_sst2_gcc_2.95.so
+check for /usr/lib/liblibtb_tr_sst2_gcc_2.95.so
+check for /usr/local/lib/liblibtb_tr_sst2_gcc_2.95.so
+check for /usr/lib/liblibtb_tr_sst2_gcc_2.95.so
+check for /sw/CDS/XCELIUM_24_09_004/liblibtb_tr_sst2_gcc_2.95.so
+LOOK FOR: GCC_EXEC_PREFIX   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: GCC_EXEC_PREFIX => 
+LOOK FOR: LIBRARY_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: LIBRARY_PATH => 
+LOOK FOR: COMPILER_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: COMPILER_PATH => 
+LOOK FOR: CPLUS_INCLUDE_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: CPLUS_INCLUDE_PATH => 
+LOOK FOR: NCSC_NCVHDL_TEST_LD_ARGS   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_NCVHDL_TEST_LD_ARGS => 
+LOOK FOR: NCSC_NCVHDL_TEST_LD_ARGS_SUFFIX   () () (-shared)  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_NCVHDL_TEST_LD_ARGS_SUFFIX => -shared
+LOOK FOR: LINKER_SHARED_LIB_OPT   () () (-L/lib64 -lrt -shared -Wl,-rpath,${NCSC_CDS_ROOT}/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR})  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = -L/lib64 -lrt -shared -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:${SYSC_LIB_PREFIX}:${NCSC_UVM_LIBDIR}
+LOOK FOR: SYSC_LIB_PREFIX   () () (${NCSC_CDS_ROOT}/tools/systemc/lib/64bit/gnu/9.3)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+get_var_value: SYSC_LIB_PREFIX => /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  replacing SYSC_LIB_PREFIX with /sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3
+  New variable value = -L/lib64 -lrt -shared -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:${NCSC_UVM_LIBDIR}
+LOOK FOR: NCSC_UVM_LIBDIR   () (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_UVM_LIBDIR => /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  replacing NCSC_UVM_LIBDIR with /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+  New variable value = -L/lib64 -lrt -shared -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+get_var_value: LINKER_SHARED_LIB_OPT => -L/lib64 -lrt -shared -Wl,-rpath,/sw/CDS/XCELIUM_24_09_004/tools/lib/64bit:/sw/CDS/XCELIUM_24_09_004/tools/systemc/lib/64bit/gnu/9.3:/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sc/lib/64bit
+LOOK FOR: NCSC_DEP_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_DEP_PATH => 
+Searching for dependency file sdram_dpi_bridge.d in path /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sdram /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj
+LOOK FOR: CXX   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: CXX => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+Creating a new dependency file sdram_dpi_bridge.o (force = 1)
+LOOK FOR: NCSC_DEP_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_DEP_PATH => 
+Searching for dependency file sdram_model.d in path /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sdram /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj
+LOOK FOR: CXX   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: CXX => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+Creating a new dependency file sdram_model.o (force = 1)
+LOOK FOR: NCSC_DEP_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_DEP_PATH => 
+Searching for dependency file Vtoplevel__ALL.d in path /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sc-standalone /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj
+LOOK FOR: CXX   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: CXX => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+Creating a new dependency file Vtoplevel__ALL.o (force = 1)
+LOOK FOR: NCSC_DEP_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_DEP_PATH => 
+Searching for dependency file verilated.d in path /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sc-standalone/verilator_include /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj
+LOOK FOR: CXX   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: CXX => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+Creating a new dependency file verilated.o (force = 1)
+LOOK FOR: NCSC_DEP_PATH   () () ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_DEP_PATH => 
+Searching for dependency file xmsc_xm_main_object.d in path /sw/CDS/XCELIUM_24_09_004/tools/inca/src /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj
+LOOK FOR: CXX   () () (${SYSC_GNU_BIN}/g++)  HASH(HASH(0x1b54c90))
+LOOK FOR: SYSC_GNU_BIN   () () (${NCSC_CDS_ROOT}/tools/cdsgcc/gcc/9.3/bin)  HASH(HASH(0x1b54c90))
+LOOK FOR: NCSC_CDS_ROOT   () (/sw/CDS/XCELIUM_24_09_004) ()  HASH(HASH(0x1b54c90))
+get_var_value: NCSC_CDS_ROOT => /sw/CDS/XCELIUM_24_09_004
+  replacing NCSC_CDS_ROOT with /sw/CDS/XCELIUM_24_09_004
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+get_var_value: SYSC_GNU_BIN => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  replacing SYSC_GNU_BIN with /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin
+  New variable value = /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+get_var_value: CXX => /sw/CDS/XCELIUM_24_09_004/tools/cdsgcc/gcc/9.3/bin/g++
+Creating a new dependency file xmsc_xm_main_object.o (force = 1)
 $CDSROOT = /sw/CDS/XCELIUM_24_09_004
 $TESTDIR = /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim
 
@@ -73,10 +955,15 @@ xmsc C++ parameters:
 		-I$CDSROOT/tools/include
 		-pipe"
 
+
+---
+
+make -f ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
+
 xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
 make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:540: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 253
 xmsc: /dev/shm/avs_local_builds/avs_ramdisk_client_rifclx786/systemc/src/frontend/wrapper/processEDGRep.cpp:2257: int processOneFunction(trModuleT&, const char*, a_routine_ptr): Assertion `il_func->memory_region != ((a_memory_region_number)0)' failed.
 xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
-TOOL:	xrun(64)	24.09-s004: Exiting on Nov 27, 2025 at 15:17:44 CET  (total: 00:00:03)
+TOOL:	xrun(64)	24.09-s004: Exiting on Nov 27, 2025 at 16:04:22 CET  (total: 00:00:06)
