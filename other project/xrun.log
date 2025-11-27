@@ -1,13 +1,11 @@
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
 xrun: *W,MESSQ: Cannot specify both the -messages and -q options on the command line.  The -q option will be used.
-xmvlog: *W,LIBNOF: Library file or directory "2" does not exist.
-xmsc_run: *W,TBFILEARG: 'xmsc.log' from
-          Command line (arg 34)
+xmsc_run: *W,TBFILEARG: './xcelium.d/run.lnx8664.24.09.d/cdsrun.lib' from
+          <unknown>
           does not have a recognized file extension, and is not recognized as
           a legal argument. This argument will be ignored.
 xmsc_run: *N,TBDEP: Test will be regenerated due to changes in
-          1-step/3-step mode
-rm: cannot remove './xcelium.d/run.lnx8664.24.09.d': Directory not empty
+          command line cxx options
 $CDSROOT = /sw/CDS/XCELIUM_24_09_004
 $TESTDIR = /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim
 
@@ -46,7 +44,10 @@ xmsc C++ parameters:
 
 xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
 make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:540: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 2
-xmsc: *F,BADCLP: The -CDSLIB argument's path $TESTDIR/./xcelium.d/run.lnx8664.24.09.d/cdsrun.lib does not exist or is not readable.
+define worklib worklib
+|
+xmsc: *W,DLCPTH (./xcelium.d/run.lnx8664.24.09.d/xmsc_run/cds.lib,2): cds.lib Invalid path '$TESTDIR/xcelium.d/run.lnx8664.24.09.d/xmsc_run/worklib' (cds.lib command ignored).
+xmsc: *F,WRKBAD: logical library name WORK is bound to a bad library name 'worklib'.
 xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
