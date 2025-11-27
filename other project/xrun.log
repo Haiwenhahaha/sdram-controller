@@ -1,11 +1,42 @@
+xrun(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s004: Started on Nov 27, 2025 at 15:17:41 CET
+xrun
+	-f run_sdram.f
+		+UVM_NO_RELNOTES
+		-uvm
+		-sysc
+		+UVM_VERBOSITY=HIGH
+		-I../sdram
+		-I../sim
+		-I../sc-standalone
+		-I../sc-standalone/verilator_include
+		-I.
+		+incdir+../sdram
+		+incdir+..
+		-scautoshell verilog
+		-scautoshell SYSTEMC
+		../sdram/sdram_dpi_bridge.cpp
+		../sdram/sdram_model.cpp
+		../sc-standalone/Vtoplevel__ALL.cpp
+		../sc-standalone/verilator_include/verilated.cpp
+		-vtimescale 1ns/1ps
+		../sdram/sdram_model_if.sv
+		../sdram/sdram_model_wrapper.sv
+		../sdram/sdram_pkg.sv
+		../sdram/sdram_tb_top.sv
+		-dpi
+		-g
+		-linedebug
+	-gui
+	-access +rwc
+	-messages
+	-xmscargs -messages
+
+   User defined plus("+") options:
+	+UVM_NO_RELNOTES
+	+UVM_VERBOSITY=HIGH
+
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
-xrun: *W,MESSQ: Cannot specify both the -messages and -q options on the command line.  The -q option will be used.
-xmsc_run: *W,TBFILEARG: './xcelium.d/run.lnx8664.24.09.d/cdsrun.lib' from
-          <unknown>
-          does not have a recognized file extension, and is not recognized as
-          a legal argument. This argument will be ignored.
-xmsc_run: *N,TBDEP: Test will be regenerated due to changes in
-          command line cxx options
 $CDSROOT = /sw/CDS/XCELIUM_24_09_004
 $TESTDIR = /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim
 
@@ -43,11 +74,9 @@ xmsc C++ parameters:
 		-pipe"
 
 xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
-make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:540: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 2
-define worklib worklib
-|
-xmsc: *W,DLCPTH (./xcelium.d/run.lnx8664.24.09.d/xmsc_run/cds.lib,2): cds.lib Invalid path '$TESTDIR/xcelium.d/run.lnx8664.24.09.d/xmsc_run/worklib' (cds.lib command ignored).
-xmsc: *F,WRKBAD: logical library name WORK is bound to a bad library name 'worklib'.
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:540: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 253
+xmsc: /dev/shm/avs_local_builds/avs_ramdisk_client_rifclx786/systemc/src/frontend/wrapper/processEDGRep.cpp:2257: int processOneFunction(trModuleT&, const char*, a_routine_ptr): Assertion `il_func->memory_region != ((a_memory_region_number)0)' failed.
 xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
+TOOL:	xrun(64)	24.09-s004: Exiting on Nov 27, 2025 at 15:17:44 CET  (total: 00:00:03)
