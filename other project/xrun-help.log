@@ -1,0 +1,456 @@
+xrun(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s004: Started on Nov 27, 2025 at 15:34:04 CET
+xrun
+	-f run_sdram.f
+		+UVM_NO_RELNOTES
+		-uvm
+		-sysc
+		+UVM_VERBOSITY=HIGH
+		-I../sdram
+		-I../sim
+		-I../sc-standalone
+		-I../sc-standalone/verilator_include
+		-I.
+		+incdir+../sdram
+		+incdir+..
+		-scautoshell verilog
+		-scautoshell SYSTEMC
+		../sdram/sdram_dpi_bridge.cpp
+		../sdram/sdram_model.cpp
+		../sc-standalone/Vtoplevel__ALL.cpp
+		../sc-standalone/verilator_include/verilated.cpp
+		-vtimescale 1ns/1ps
+		../sdram/sdram_model_if.sv
+		../sdram/sdram_model_wrapper.sv
+		../sdram/sdram_pkg.sv
+		../sdram/sdram_tb_top.sv
+		-dpi
+		-g
+		-linedebug
+	-gui
+	-access +rwc
+	-messages
+	-xmscargs -help
+
+   User defined plus("+") options:
+	+UVM_NO_RELNOTES
+	+UVM_VERBOSITY=HIGH
+
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+  xmsc_run TOOL:	xmsc_run(64)	24.09-s004
+  Usage:
+        xmsc_run [options] <list of c++ files> <list of hdl files>
+
+  Basic xmsc_run Options:
+    +<plusarg>                : Plus arguments are sent to both the hdl
+                                elaborator and the hdl simulator.
+    +xmelabexe+<xmelabexecutable>
+                              : Use the specified xmelab executable.
+    +xmsimexe+<xmsimexecutable>
+                              : Use the specified ncsim executable.
+    -CDSLIB <cds library file> | +cdslib+<cds library file>
+                              : Specify a cds library file to use for the XM-
+                                Simulator tools.
+    -CHECKOPTIONSOFF          : Do not fail when unknown options are given.
+    -CLEAN                    : Deletes previous run and re-compiles.
+    -FILE | -F <filename>     : Specify a file from which to load command line
+                                arguments.
+    -GUI                      : Run the simulator using the simulator's native
+                                gui.
+    -HDLVAR <hdl variable file> | +hdlvar+<hdl variable file>
+                              : Specify a hdl.var file to use for the XM-
+                                Simulator tools.
+    -HELP | -h                : Print this help message.
+    -INPUT <inputfile> | +tcl+<inputfile>
+                              : Specify a tcl command file to run with xmsim.
+    -LAYOUT <CDEBUG | ESWDEBUG>
+                              : Send layout options to Simvision.
+    -LOCATION                 : Print the location of the XM-SC installation.
+    -NOELAB                   : Do not run the elaborator.
+    -ONLY (COMP | LINK | HDL_COMP | ELAB | SIM)
+                              : Only execute the specified sub process.
+    -PRINTSPECS               : Print the spec file.
+    -REDMEM | +xmredmem       : Use reduced memory image size for simulation.
+    -SNAPSHOT <snapshot> | +name+<snapshot>
+                              : Specify the name of the snapshot to use for
+                                simulation.
+    -SPEC <specfile>          : Specify an alternative spec file to use for
+                                controlling configuration information.
+    -STATUS                   : Turn on the status output for XM-Simulator
+                                tools.
+    -STOP (DEP | COMP | ASSEM | LINK | HDL_COMP | ELAB | HDL_ELAB)
+                              : Stop execution after specified sub process.
+    -TOPIC <category|option>  : Without an argument, lists all help
+                                categories.  With a <category>, lists all help
+                                options in that group.  With <option> lists
+                                more info about that option.
+    -USE (XMSIM | XRUN)       : Use the specified simulator for the simulation
+                                run.
+    -VERSION                  : Prints the tool version information.
+    -WORK <work library> | +work+<work library>
+                              : Specify a work library for three stage hdl
+                                simulators that require a working library for
+                                the compile phase.
+    -r <snapshot name>        : Force Simulation using snapshot. Do not
+                                compile or elaborate.
+    -s | -TCL                 : Run the simulator in interactive mode.
+    -xmsctmpdir               : Specify a temp directory to be used by xmsc
+
+  Output, Logfiles, and Messaging Options:
+    -FORMAT (ON | OFF)        : Enables shorter compiling messages from xmsc.
+    -GENLIB <libname>         : Specify the name of a shared library to create
+                                for future runs.
+    -LESSQUIET                : Suppress printing of arguments given to
+                                xmsc_run and xmsc compile parameters.
+    -LOG <file> | -LOGFILE <file>
+                              : Output to <file> as well as to standard out.
+    -MESSAGES                 : Turn on verbose messages for the XM-Simulator
+                                tools.
+    -NOCOPYRIGHT | -q         : Turn off the banner printing for the XM-
+                                Simulator tools.
+    -NOWARN <warntype>        : Specify specific warning types for exclusion.
+                                This has to be the *first* argument on the
+                                command line.
+    -OUT <output directory>   : Use the output directory as the location of
+                                all generated data.
+    -QUIET                    : Suppress printing to standard out (output is
+                                still printed to the log file).
+    -SINGLE_LOG               : Do not create log files for each of the nctool
+                                subprograms (xmvlog.log, xmsim.log, etc), only
+                                create a single ncsc_run log file.
+    -TEST <testname>          : In dynamic mode, specify the name of generated
+                                library (lib<testname>.so).
+    -UNBUFFERED               : Ask subprograms NOT to buffer standard out.
+    -VERBOSE                  : Print verbose messages.
+    -XMSCRC <dirname>         : Home to intermediate files produced by XM-SC.
+    -XMSC_MSGS (ON | OFF)     : Tell xmsc to turn xmsc messages on or off.
+
+  SystemC/C++ Compiler, Linker, and Platform Options:
+    -64BIT                    : Run in 64 bit mode where available.
+    -ARMFM <processor_model> | <option>
+                              : Compile, link and/or simulate with specified
+                                Fast Model processor model from ARM or invoke
+                                Fast Model related capability; see directory
+                                `xmroot`/tools.`cds_plat`/esl/ARMFM/models for
+                                a list of supported models. Other capabilities
+                                are specified with <option> values as follows:
+                                debug - wait for connection with unspecified
+                                CADI client, trace - turn on TARMAC trace,
+                                modeldebugger - run modeldebugger from ARM and
+                                wait for connection, rvdebug - run RealView
+                                debugger from ARM and wait for connection,
+                                image:[<cpu_path>:]<image_path> - load image
+                                to given CPU.
+    -ARMFMVLNV <processor_model> | <option>
+                              : Same as -ARMFM but takes V:L:N:V format
+                                instead.
+    -ASEXT <ext1>[,<extn>]    : Add extensions to the list of legal values for
+                                assembly files.
+    -CATCXX                   : Positional option used to combine C++ source
+                                files into one file to improve compile time.
+    -CATCXXSIZE <number>      : Sets the CATCXX partition size to break up
+                                large groups into multiple files.  Default is
+                                10.
+    -CCEXT <ext1>[,<extn>]    : Add extensions to the list of legal values for
+                                C files.
+    -COMPILEONLY              : Same as -NOEDG.
+    -CXXEXT <ext1>[,<extn>]   : Add extensions to the list of legal values for
+                                C++ files.
+    -CXXMAIN <main file>      : Specify a file that contains the main()
+                                routine for xmelab and xmsim.
+    -D<macro>                 : This option is passed to the C and C++
+                                compilers for defining macros on the command
+                                line.
+    -DISTCOMP | -NODISTCOMP   : Positional option used to turn distributed
+                                compilation on/off for source files listed
+                                after these keywords using the platform
+                                specified by the -DISTPLAT option.
+    -DISTCOMPARGS,<arg1>[,<argn>]
+                              : Pass user specified arguments to the
+                                underlying platform for distributed
+                                compilation.
+    -DISTCOMPJOBS <number>    : Number of parallel distributed compile jobs to
+                                run at once.  Default is 20.
+    -DISTPLAT <lsf>           : Specify the underlying platform used for
+                                distributed compilation, and enables
+                                distributed compilation for all files on the
+                                command line except if one or more instances
+                                of -DISTCOMP, -NODISTCOMP are used.
+    -DPI                      : Add appropriate build options for dpi designs.
+    -DYNAMIC                  : Build a shared object for simulating.
+    -EDGONLY                  : Allows xmsc_run to generate the SCD info (the
+                                output from EDG) without having to compile the
+                                object files (like the reverse of -NOEDG).
+    -GCC_VERS                 : 9.3 or 6.3 (Linux only)
+    -GCOV                     : Prepare C/C++ files for use with gcov.
+    -GENOBJ <file>            : Build a single archive file <file>.o and stop
+                                after linking.
+    -GNU | -NATIVE            : Choose the compiler for a given platform.
+    -I<include dir>           : This option is passed to the C and C++
+                                compilers for defining directories to search
+                                for to find include files.
+    -L<libdir>                : This option is passed to the linker for
+                                defining the search path for libraries.
+    -LINKSYSC (dynamic | static)
+                              : Use libsystemc.so (dynamic) or libsystemc_ar.a
+                                (static).
+    -NODEP                    : Do not create dependencies.
+    -NOEDG                    : Turn off the EDG front-end for XM-SC. This can
+                                lead to faster compile times at the expense of
+                                browser info needed by SimVision.
+    -NOOBJCOMP                : Do not compile object files on the command
+                                line.
+    -NOSYSTEMCLINK            : Do not include libsystemc.so on the link line.
+                                Use for building shared libraries that will be
+                                later linked against libsystemc.so.
+    -O<level> | +O<level>     : Specify an optimization level for compiling.
+    -OBJEXT <ext1>[,<extn>]   : Add extensions to the list of legal values for
+                                "safe" objects.
+    -PRECOMPILED_HEADERS (on | off)
+                              : Use Precompiled headers. Only works with GCC
+                                6.3.
+    -SCFRONTEND               : Run the SystemC Front End during compilation
+                                to generate SystemC design information.
+    -STATIC                   : Build xmelab and xmsim statically.
+    -TESTLINKDEP              : Perform link dependency check.
+    -UVMHOME <arg>            : Use arg as the root to find all uvm assets.
+    -W<subprocess>,<arg1>[,<argn>]
+                              : In GNU mode, pass arguments to g++ for pass
+                                through to the subprocess.
+    -Wcc,<arg1>[,<argn>]      : Pass user specified arguments to the C
+                                compiler.
+    -Wcxx,<arg1>[,<argn>]     : Pass user specified arguments to the C++
+                                compiler.
+    -Wl,<arg1>[,<argn>]       : Pass user specified arguments to the C++
+                                linker.
+    -Wld,<arg1>[,<argn>]      : Pass user specified arguments to GCC/G++.
+    -l<libname>               : This option is passed to the linker for
+                                defining an archive or shared library to be
+                                linked in.
+
+  Verilog/SystemVerilog, VHDL Compiler Options:
+    -ACCESS <+|-><R|W|C> | +access+<+|-><R|W|C>
+                              : Specify global design access.
+    -LEXPRAGMA                : Turn on lexical pragma parsing for Verilog and
+                                VHDL.
+    -LIBVERBOSE               : Print messages about resolving instances.
+    -LINEDEBUG                : Compile the Verilog-HDL or VHDL files with
+                                line debugging turned on.
+    -NOHDLDEP                 : Do not check hdl dependencies and run a full
+                                hdl compile/elab.
+    -NOMEMPACK                : Turn off memory packing for Verilog memories.
+    -NOSCV | -SCV             : Turn off/on linking of the CVE and SCV
+                                libraries.
+    -NOTLM                    : Turn off inclusion of the tlm headers and
+                                libraries.
+    -NOUVMSC                  : Turn off inclusion of the Cadence UVM-SC
+                                headers and libraries.
+    -NOVIC | -VIC             : Turn off/on linking of the VIC libraries.
+    -PRAGMA                   : Turn on pragma parsing for Verilog and VHDL.
+    -SCAUTOSHELL (SYSTEMC | HDL | VERILOG | VHDL)
+                              : Automatically generate shell modules for use
+                                between HDL (Verilog or VHDL) and SystemC.
+    -SMARTORDER               : Specifies order independent compilation for
+                                vhdl files.
+    -SV                       : Turn on new SystemVerilog keywords.
+    -SV_LIB <arg>             : Dynamically load a DPI Library.
+    -SV_ROOT <arg>            : Specify root path for -sv_lib switch.
+    -TOP <top level design unit>
+                              : Specify a top level design unit of a two stage
+                                or three stage simulator.
+    -UPCASE                   : Compile verilog files converting all
+                                identifiers to uppercase.
+    -V1995                    : Turn off Verilog 2001 keywords.
+    -V93                      : Turn on VHDL 93 parsing.
+    -VHDLEXT <ext1>[,<extn>]  : Add extensions to the list of legal values for
+                                vhdl files.
+    -VLOGEXT <ext1>[,<extn>]  : Add extensions to the list of legal values for
+                                verilog files.
+    -XMINITIALIZE <arg>       : Specify the value to which all the variables
+                                will be initialized.
+    -c                        : Tells xrun to compile and elaborate, but not
+                                to simulate.
+    -v <verilog library file> : Specify a verilog library file.
+    -xmvhdl_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to the vhdl
+                                compiler.
+    -xmvlog_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to the Verilog hdl
+                                compiler.
+    -y <verilog library directory>
+                              : Specify a verilog library directory.
+
+  Elaboration & Simulation Options:
+    -AFILE <access file> | +afile+<access file>
+                              : Specify a design access file for xmelab.
+    -ARMFM <processor_model> | <option>
+                              : Compile, link and/or simulate with specified
+                                Fast Model processor model from ARM or invoke
+                                Fast Model related capability; see directory
+                                `xmroot`/tools.`cds_plat`/esl/ARMFM/models for
+                                a list of supported models. Other capabilities
+                                are specified with <option> values as follows:
+                                debug - wait for connection with unspecified
+                                CADI client, trace - turn on TARMAC trace,
+                                modeldebugger - run modeldebugger from ARM and
+                                wait for connection, rvdebug - run RealView
+                                debugger from ARM and wait for connection,
+                                image:[<cpu_path>:]<image_path> - load image
+                                to given CPU, regview[on|off][:<cpu_path>] -
+                                turn on/off visibility to internal registers
+                                of all or specified CPU.
+    -ARMFMVLNV <processor_model> | <option>
+                              : Same as -ARMFM but takes V:L:N:V format
+                                instead.
+    -CATROOT <directory>      : Specify SystemC Model Catalog search path for
+                                .conf files which are included in another
+                                .conf file with '!include' directive.
+    -CCIPARAM                 : Pass SystemC CCI parameter values to the
+                                elaborator and simulator.
+    -EN_SRCDECL_SYSC          : Enable Source decleration for SYSC Objects
+                                (sc_signal/sc_port)
+    -OVMTOP <arg>             : Specify the ovm top test class name.
+    -PROFILE                  : Generate a run time profile of the design.
+    -QUANTIFY                 : Instruments object code with the IBM
+                                PurifyPlus quantify tool.
+    -SAVEVPCONFIG <config name>[:<config description>]
+                              : Save virtual platform design configuration.
+                                Optional argument can be provided to describe
+                                the configuration
+    -SCCONFIG <file>          : Provide parameter configuration file for
+                                elaboration and simulation.
+    -SCCONFIGEXTEND <type>=<instance>
+                              : Extend SystemC -scconfig instances. Format:
+                                V::L::N::V=sc_scope.instance
+    -SCIDA                    : Enable Indago flow for pure SystemC design.
+    -SCPROCESSCB              : Enable SystemC Process Callbacks.
+    -SCPROCESSORDER <arg>     : Adjust the process order.
+    -SCPROFCOUNT              : Enable SystemC dynamic activity count.
+    -SCSYNCEVERYDELTA | -NOSCSYNCEVERYDELTA
+                              : Turn on/off delta cycle simulation accuracy.
+    -SCTLMCHECK               : Enable TLM2 Checks and Information messages.
+    -SCTLMDBNAME <dbname>     : Database name for SCTLMRECORD mode.
+    -SCTLMMMAP <file>         : Provide Memory Map file for TLM 2.0
+                                Performance Analysis.
+    -SCTLMNODATA              : Do not record strings that show data
+                                transferred in tlm trace mode.
+    -SCTLMPERF                : Gather TLM Performance Metrics.
+    -SCTLMPROBE               : Turn on extensible debugging capability for
+                                TLM 2.0 sockets.
+    -SCTLMRECORD              : Turn on TLM recording.
+    -SCTOP <sctop>            : Use the specified SC top level when running
+                                xrun mode.
+    -SCVERBOSITY <arg>        : Control SystemC reporting verbosity.
+    -SC_MAIN                  : Run with an sc_main entry point.
+    -SC_MAIN_STACKSIZE <arg>  : Set sc_main stack size, default is 0x400000.
+    -SC_THREAD_STACKSIZE <arg>
+                              : Set SC_THREAD stack size, default is 0x16000.
+    -SIMVISARGS <arg>         : Quoted string of SimVision cmdline arguments.
+    -SYNCALL <on|off>         : Synchronize all compatible signals and
+                                transactions.
+    -USESCTIMEUNIT <on|off>   : Run VSP mode with SystemC time resolution.
+    -UVMTOP <arg>             : Specify the uvm top test class name.
+    -VSPDEBUG <off|all|fast>  : VSP Virtual Platform Debug and Analysis mode.
+    -xmelab_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to the hdl
+                                elaborator.
+    -xmsc_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to xmsc.
+    -xmshell_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to ncshell.
+    -xmsim_args,<arg1>[,<argn>]
+                              : Add arguments to be passed to the hdl
+                                simulator.
+
+  Assertions, Verification and Performance Options:
+    -ASSERT | +assert         : Turn on ABV assert parsing of Verilog, VHDL
+                                and SystemC files.
+    -ASSERT_SC                : Turn on ABV assert parsing for SystemC only.
+    -ASSERT_VHDL              : Turn on ABV assert parsing for VHDL only.
+    -ASSERT_VLOG              : Turn on ABV assert parsing for Verilog only.
+    -CONFFILE <arg>           : Generate a configuration file with the given
+                                name.
+    -CONFFLAT                 : (requires -CONFFILE) Generate a VHDL flat
+                                configuration declaration.
+    -CONFNAME <arg>           : (requires -CONFFILE) Specify the output
+                                configuration's name (top unit for the
+                                hierarchical case).
+    -COVDESIGN <arg>          : Coverarge design name.
+    -COVERAGE <arg>           : Enable coverage instrumentation.
+    -COVFILE <arg>            : Coverage Instrumentation Configuration file.
+    -COVOVERWRITE             : Enable overwriting of coverage output files
+                                and directories.
+    -COVTEST                  : Test name for coverage results databases.
+    -COVWORKDIR <arg>         : Enable overwriting of coverage output files
+                                and directories.
+    -DATAFILE <inputfile>     : Specify file that contains data for a model.
+                                The data will be input via stdin.
+    -EFENCE                   : Debug with Electric Fence. -DEBUG also
+                                recommended.
+    -EXTASSERTMSG | +extassertmsg
+                              : Run a simulation with extended assertion
+                                messages.
+    -NOASSERT_SYNTH_PRAGMA | +noassert_synth_pragma
+                              : Disable the generation of assertions from
+                                synthesis pragmas.
+    -PROFOUTPUT <arg>         : Specifies the file to contain profiling
+                                information.
+    -PROFTHREAD               : Allow Threaded processes to profile.
+    -PROPFILE_SC <file>       : Use the propfile with xmsc only.
+    -PROPFILE_VHDL <file>     : Use the propfile with vhdl only.
+    -PROPFILE_VLOG <file> | +propfile+<file>
+                              : Specifies a file containing PSL statements.
+                                Use the propfile with vlog only.
+    -PURECOV                  : Instruments object code with the IBM
+                                PurifyPlus purecov tool.
+
+  Dynamic Loading Options:
+    -LOADPAL <arg>            : Specify the PDCMI entry points for PAL.
+    -LOADPLI1 <arg>           : Specify the library_name:boot_routine(s) to
+                                dynamically load a PLI1.0 application.
+    -LOADSC <arg>             : Specify the SystemC libraries to be
+                                dynamically loaded.
+    -LOADSCSIM <arg>          : Specify the shared libraries containing
+                                SystemC to be loaded dynamically during
+                                simulation. This is in addition to any such
+                                libraries added during (static) elaboration.
+    -LOADVHPI <arg>           : Dynamically load a VHPI application.
+    -LOADVPI <arg>            : Specify the library_name:boot_routine(s) to
+                                dynamically load a VPI application.
+
+  Debug Options:
+    -DDD                      : Run the simulation under the control of the
+                                ddd graphical debugger.
+    -DEBUG                    : Run in debug mode.
+    -GDB | -DBX               : Run the simulation under the control of the
+                                debugger.
+    -PURIFY                   : Instruments object code with the IBM
+                                PurifyPlus purify tool. Recommended with -
+                                DEBUG option.
+    -SCMEMDEBUG               : Enable TLM memory debugging.
+    -SVSCDI                   : Enable direct binding of SystemC module in
+                                SystemVerilog.
+    -THREAD_AWARE_GDB (ON | OFF)
+                              : In gdb mode turn thread aware debugging on or
+                                off (Default is on).
+
+  Type 'xmsc_run -topic' for a short listing of all commands and categories.
+  Type 'xmsc_run -topic <command>' for more information about a command.
+
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+xmelab: *N,CUSHGN: HDL shell generation required for SystemC module 'sdram_tb_top.sdram_wrap@sdram_model_wrapper<module>.sdram_model_inst' in 'sdram_model.worklib:sdram_model_wrapper'.
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		sdram_types_pkg
+		sdram_pkg
+		sdram_tb_top
+  sdram_model sdram_model_inst();
+                             |
+xmelab: *E,MISSYSC (../sdram/sdram_model_wrapper.sv,11|29): Missing defintion for sdram_model_inst.  The use of C++ files has been detected on xrun possibly missing the "-sysc" option.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s004: Exiting on Nov 27, 2025 at 15:34:05 CET  (total: 00:00:01)
