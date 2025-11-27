@@ -36,24 +36,81 @@ xmsc C++ parameters:
 		-pipe"
 
 xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
-make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:541: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 1
-"$TESTDIR/
-          ../sdram/sdram_dpi_bridge_autoshell.cpp", line 6: catastrophic error:
-          cannot open source file "../sim/sdram_dpi_bridge.cpp"
-  #include "../sim/sdram_dpi_bridge.cpp"
-                                        ^
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_types.h", line 1587: error:
+          expression must have class type but it has type "const T_Value *"
+          if (m_storage.empty()) return T_Value(0);  // The big three do it this way
+              ^
 
-1 catastrophic error detected in the compilation of "$TESTDIR/../sdram/sdram_dpi_bridge_autoshell.cpp".
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_funcs.h", line 343: warning:
+          statement is unreachable
+      return 0;
+      ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 35: warning:
+          conversion from a string literal to "char *" is deprecated
+    vpi_printf("DPI PRINT:: sdram_model__getScopeByName called for %s\n", inst);
+               ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 39: warning:
+          conversion from a string literal to "char *" is deprecated
+      vpi_printf("DPI PRINT:: sdram_model__getScopeByName FAILED for %s\n", inst);
+                 ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 46: warning:
+          conversion from a string literal to "char *" is deprecated
+      vpi_printf("DPI PRINT:: sdram_model__linkSvScope received null model\n");
+                 ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 51: warning:
+          conversion from a string literal to "char *" is deprecated
+    vpi_printf("DPI PRINT:: sdram_model__linkSvScope cached scope\n");
+               ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 61: warning:
+          conversion from a string literal to "char *" is deprecated
+      vpi_printf("DPI PRINT:: sdram_model__apply_command skipped null model\n");
+                 ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 70: warning:
+          conversion from a string literal to "char *" is deprecated
+      vpi_printf("DPI PRINT:: sdram_model__peek_mem skipped null model\n");
+                 ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_dpi_bridge.cpp", line 83: warning:
+          conversion from a string literal to "char *" is deprecated
+      vpi_printf("DPI PRINT:: sdram_notify_sv_response missing cached scope\n");
+                 ^
+
+1 error detected in the compilation of "$TESTDIR/../sdram/sdram_dpi_bridge_autoshell.cpp".
+
+xmsc: compiling $TESTDIR/../sdram/sdram_model.cpp
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:885: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o] Error 1
+"$TESTDIR/
+          ../sdram/sdram_model_autoshell.cpp", line 6: catastrophic error:
+          cannot open source file "../sim/sdram_model.cpp"
+  #include "../sim/sdram_model.cpp"
+                                   ^
+
+1 catastrophic error detected in the compilation of "$TESTDIR/../sdram/sdram_model_autoshell.cpp".
 Compilation terminated.
 "$TESTDIR/
-          ../sdram/sdram_dpi_bridge_autoshell.cpp", line 6: catastrophic error:
-          cannot open source file "../sim/sdram_dpi_bridge.cpp"
-  #include "../sim/sdram_dpi_bridge.cpp"
-                                        ^
+          ../sdram/sdram_model_autoshell.cpp", line 6: catastrophic error:
+          cannot open source file "../sim/sdram_model.cpp"
+  #include "../sim/sdram_model.cpp"
+                                   ^
 
-1 catastrophic error detected in the compilation of "$TESTDIR/../sdram/sdram_dpi_bridge_autoshell.cpp".
+1 catastrophic error detected in the compilation of "$TESTDIR/../sdram/sdram_model_autoshell.cpp".
 Compilation terminated.
-xmsc: Error executing: $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ -DNCSC -DCADENCE  -DLNX86 -D_GLIBCXX_USE_CXX11_ABI=1 -I$CDSROOT/tools/systemc/include_pch/64bit -o ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sdram -I$TESTDIR -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone/verilator_include -I$TESTDIR/. -I$CDSROOT/tools/include -I$CDSROOT/tools/inca/include -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -fPIC -I$CDSROOT/tools/include -pipe -DXMSC -DNCSC -I$CDSROOT/tools/systemc/include_pch -I$CDSROOT/tools/tbsc/include -I$CDSROOT/tools/vic/include -I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -I$CDSROOT/tools/systemc/include/cci -I$CDSROOT/tools/systemc/include/factory -I$CDSROOT/tools/systemc/include/tlm2 -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -c -x c++  -Wall -O0 -g $TESTDIR/../sdram/sdram_dpi_bridge_autoshell.cpp
-xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
+xmsc: Error executing: $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ -DNCSC -DCADENCE  -DLNX86 -D_GLIBCXX_USE_CXX11_ABI=1 -I$CDSROOT/tools/systemc/include_pch/64bit -o ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sdram -I$TESTDIR -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone/verilator_include -I$TESTDIR/. -I$CDSROOT/tools/include -I$CDSROOT/tools/inca/include -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -fPIC -I$CDSROOT/tools/include -pipe -DXMSC -DNCSC -I$CDSROOT/tools/systemc/include_pch -I$CDSROOT/tools/tbsc/include -I$CDSROOT/tools/vic/include -I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -I$CDSROOT/tools/systemc/include/cci -I$CDSROOT/tools/systemc/include/factory -I$CDSROOT/tools/systemc/include/tlm2 -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -c -x c++  -Wall -O0 -g $TESTDIR/../sdram/sdram_model_autoshell.cpp
+xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
