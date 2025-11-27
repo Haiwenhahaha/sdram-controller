@@ -1,0 +1,64 @@
+xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
+      seq.randomize() with { num_txns == 4; };
+                  |
+xmvlog: *W,FUNTSK (../sdram/sdram_pkg.sv,179|18): function called as a task without void'().
+/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sdram/sdram_dpi_bridge.cpp:1:10: fatal error: sdram/sdram_dpi_bridge.h: No such file or directory
+    1 | #include "sdram/sdram_dpi_bridge.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sdram/sdram_model.cpp:1:10: fatal error: sdram/sdram_model.h: No such file or directory
+    1 | #include "sdram/sdram_model.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+$CDSROOT = /sw/CDS/XCELIUM_24_09_004
+$TESTDIR = /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim
+
+TOOL:	xmsc(64)	24.09-s004
+xmsc C++ parameters: 
+	xmsc -COMPILER $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ 
+	-f ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/xmsc.args
+	-MANUAL 
+	-CFLAGS "-DXMSC
+		-DNCSC
+		-I$CDSROOT/tools/systemc/include_pch
+		-I$CDSROOT/tools/tbsc/include
+		-I$CDSROOT/tools/vic/include
+		-I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc
+		-I$CDSROOT/tools/systemc/include/cci
+		-I$CDSROOT/tools/systemc/include/factory
+		-I$CDSROOT/tools/systemc/include/tlm2
+		-fPIC
+		-D_GLIBCXX_USE_CXX11_ABI=1 -c
+		-x c++  -Wall
+		-O0 -g
+		-I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sdram
+		-I$TESTDIR
+		-I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone
+		-I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone/verilator_include
+		-I$TESTDIR/.
+		-I$CDSROOT/tools/include
+		-I$CDSROOT/tools/inca/include
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc
+		-fPIC
+		-I$CDSROOT/tools/include
+		-pipe"
+
+xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:199: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o] Error 1
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$CDSROOT/tools.lnx86/cdsgcc/gcc/9.3/install/lib/gcc/x86_64-redhat-linux/9.3.0/include"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$CDSROOT/tools.lnx86/cdsgcc/gcc/9.3/install/lib/gcc/x86_64-redhat-linux/9.3.0/include"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$TESTDIR/."
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$CDSROOT/tools/include"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: ignoring duplicate directory "$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: $TESTDIR/../sdram/sdram_dpi_bridge.cpp:1:10: fatal error: sdram/sdram_dpi_bridge.h: No such file or directory
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++:     1 | #include "sdram/sdram_dpi_bridge.h"
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+$CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++: compilation terminated.
+xmsc: Error executing: $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ in dryRun mode to collect predefined includes
+xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
+
+xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
