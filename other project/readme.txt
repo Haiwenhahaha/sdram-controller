@@ -1,6 +1,24 @@
 单纯有个txt方便建文件夹
 方便交流
 
+V3
+
+    rand sdram_cmd_e      cmd;
+                   |
+xmvlog: *E,PKGDOCU (../sdram/sdram_pkg.sv,10|19): SV package not allowed to access items declared in Compilation unit scope.
+    uvm_analysis_port#(sdram_rsp_t) rsp_ap;
+                                 |
+xmvlog: *E,PKGDOCU (../sdram/sdram_pkg.sv,92|33): SV package not allowed to access items declared in Compilation unit scope.
+      sdram_rsp_t rsp;
+                |
+xmvlog: *E,PKGDOCU (../sdram/sdram_pkg.sv,100|16): SV package not allowed to access items declared in Compilation unit scope.
+      seq.randomize() with { num_txns == 4; };
+                  |
+xmvlog: *W,FUNTSK (../sdram/sdram_pkg.sv,178|18): function called as a task without void'().
+  import sdram_pkg::*;
+                 |
+xmvlog: *E,NOPBIND (../sdram/sdram_tb_top.sv,8|17): Package sdram_pkg could not be bound.
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
 
 
 
