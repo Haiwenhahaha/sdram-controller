@@ -37,7 +37,10 @@ xmsc C++ parameters:
 
 make: 'xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o' is up to date.
 
-xmsc: compiling $TESTDIR/../sdram/sdram_model.cpp
+make: 'xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o' is up to date.
+
+xmsc: compiling $TESTDIR/Vtoplevel__ALL.cpp
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:1246: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/Vtoplevel__ALL.o] Error 1
 "/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
           tandalone/verilator_include/verilated_types.h", line 1587: error:
           expression must have class type but it has type "const T_Value *"
@@ -50,27 +53,63 @@ xmsc: compiling $TESTDIR/../sdram/sdram_model.cpp
       return 0;
       ^
 
-1 error detected in the compilation of "$TESTDIR/../sdram/sdram_model_autoshell.cpp".
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_sc_trace.h", line 181: error:
+          member function declared with "override" does not override a base
+          class member
+      void set_time_unit(int exponent10_seconds) override {}  // deprecated
+           ^
 
-xmsc: compiling $TESTDIR/../sc-standalone/Vtoplevel__ALL.cpp
-make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:1245: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/Vtoplevel__ALL.o] Error 1
-"$TESTDIR/
-          ../sc-standalone/Vtoplevel__ALL_autoshell.cpp", line 6: catastrophic
-          error: cannot open source file "../sim/Vtoplevel__ALL.cpp"
-  #include "../sim/Vtoplevel__ALL.cpp"
-                                      ^
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_sc_trace.h", line 56: warning:
+          overloaded virtual function "sc_core::sc_trace_file::trace" is only
+          partially overridden in class "VerilatedScTraceBase"
+  class VerilatedScTraceBase VL_NOT_FINAL : private sc_core::sc_object,
+        ^
 
-1 catastrophic error detected in the compilation of "$TESTDIR/../sc-standalone/Vtoplevel__ALL_autoshell.cpp".
-Compilation terminated.
-"$TESTDIR/
-          ../sc-standalone/Vtoplevel__ALL_autoshell.cpp", line 6: catastrophic
-          error: cannot open source file "../sim/Vtoplevel__ALL.cpp"
-  #include "../sim/Vtoplevel__ALL.cpp"
-                                      ^
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_vcd_sc.h", line 54: warning:
+          function "sc_core::sc_trace_file::cycle(bool)" is hidden by
+          "VerilatedVcdSc::cycle" -- virtual function override intended?
+      void cycle() override { VerilatedVcdC::dump(sc_core::sc_time_stamp().to_double()); }
+           ^
 
-1 catastrophic error detected in the compilation of "$TESTDIR/../sc-standalone/Vtoplevel__ALL_autoshell.cpp".
-Compilation terminated.
-xmsc: Error executing: $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ -DNCSC -DCADENCE  -DLNX86 -D_GLIBCXX_USE_CXX11_ABI=1 -I$CDSROOT/tools/systemc/include_pch/64bit -o ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/Vtoplevel__ALL.o -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sdram -I$TESTDIR -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone/verilator_include -I$TESTDIR/. -I$CDSROOT/tools/include -I$CDSROOT/tools/inca/include -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -fPIC -I$CDSROOT/tools/include -pipe -DXMSC -DNCSC -I$CDSROOT/tools/systemc/include_pch -I$CDSROOT/tools/tbsc/include -I$CDSROOT/tools/vic/include -I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -I$CDSROOT/tools/systemc/include/cci -I$CDSROOT/tools/systemc/include/factory -I$CDSROOT/tools/systemc/include/tlm2 -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -c -x c++  -Wall -O0 -g $TESTDIR/../sc-standalone/Vtoplevel__ALL_autoshell.cpp
+2 errors detected in the compilation of "$TESTDIR/Vtoplevel__ALL_autoshell.cpp".
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_types.h", line 1587: error:
+          expression must have class type but it has type "const T_Value *"
+          if (m_storage.empty()) return T_Value(0);  // The big three do it this way
+              ^
+
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_funcs.h", line 343: warning:
+          statement is unreachable
+      return 0;
+      ^
+
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_sc_trace.h", line 181: error:
+          member function declared with "override" does not override a base
+          class member
+      void set_time_unit(int exponent10_seconds) override {}  // deprecated
+           ^
+
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_sc_trace.h", line 56: warning:
+          overloaded virtual function "sc_core::sc_trace_file::trace" is only
+          partially overridden in class "VerilatedScTraceBase"
+  class VerilatedScTraceBase VL_NOT_FINAL : private sc_core::sc_object,
+        ^
+
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_vcd_sc.h", line 54: warning:
+          function "sc_core::sc_trace_file::cycle(bool)" is hidden by
+          "VerilatedVcdSc::cycle" -- virtual function override intended?
+      void cycle() override { VerilatedVcdC::dump(sc_core::sc_time_stamp().to_double()); }
+           ^
+
+2 errors detected in the compilation of "$TESTDIR/Vtoplevel__ALL_autoshell.cpp".
+xmsc: Error executing: $CDSROOT/tools/cdsgcc/gcc/9.3/bin/g++ -DNCSC -DCADENCE  -DLNX86 -D_GLIBCXX_USE_CXX11_ABI=1 -I$CDSROOT/tools/systemc/include_pch/64bit -o ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/Vtoplevel__ALL.o -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sdram -I$TESTDIR -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone -I/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-standalone/verilator_include -I$TESTDIR/. -I$CDSROOT/tools/include -I$CDSROOT/tools/inca/include -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -fPIC -I$CDSROOT/tools/include -pipe -DXMSC -DNCSC -I$CDSROOT/tools/systemc/include_pch -I$CDSROOT/tools/tbsc/include -I$CDSROOT/tools/vic/include -I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc -I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc -I$CDSROOT/tools/systemc/include/cci -I$CDSROOT/tools/systemc/include/factory -I$CDSROOT/tools/systemc/include/tlm2 -fPIC -D_GLIBCXX_USE_CXX11_ABI=1 -c -x c++  -Wall -O0 -g $TESTDIR/Vtoplevel__ALL_autoshell.cpp
 xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/Vtoplevel__ALL.o
 
 xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
