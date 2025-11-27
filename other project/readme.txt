@@ -20,7 +20,7 @@ xmvlog: *W,FUNTSK (../sdram/sdram_pkg.sv,178|18): function called as a task with
 xmvlog: *E,NOPBIND (../sdram/sdram_tb_top.sv,8|17): Package sdram_pkg could not be bound.
 xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
 
-
+解决：PKGDOCU 的意思就是“包内代码不能直接访问编译单元作用域的定义”。原因是这些定义默认只在自己所在文件可见，如果需要跨文件/跨包使用，必须放到一个 package 里。现在我们已经这么做了，所以这个错误不会再出现。
 
 
 V2
