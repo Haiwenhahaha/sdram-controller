@@ -1,5 +1,43 @@
 单纯有个txt方便建文件夹
 方便交流
+V9
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,229|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(tr,arg);
+               |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,240|15): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(arg, tr); // Need run-time casting because at compile time T1 can be scalar.
+            |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,250|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(tr, arg);
+                |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,263|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(tr,arg);
+               |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,273|15): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(tr, arg);
+                |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,285|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(arg,req);
+            |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,295|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(rsp,res);
+                |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,297|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(arg,req);
+            |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,308|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(rsp,res);
+                |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,310|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+    $cast(arg, tr); // Need run-time casting because at compile time T1 can be scalar.
+            |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,319|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+      $cast(tmp, t);
+                 |
+xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_analysis_port.svh,102|17): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
+
+
+
 V8
 xrun: *E,OPT2ND: option (-v) requires an argument.
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
