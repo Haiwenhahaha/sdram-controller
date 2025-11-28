@@ -5,6 +5,22 @@ xrun: *E,OPT2ND: option (-v) requires an argument.
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
 xrun: *SE,BDOPT: Unknown option -xmsclog.
 
+make -f ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o
+
+xmsc: compiling $TESTDIR/../sdram/sdram_dpi_bridge.cpp
+
+---
+
+make -f ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o
+
+xmsc: compiling $TESTDIR/../sdram/sdram_model.cpp
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:543: xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o] Error 253
+xmsc: /dev/shm/avs_local_builds/avs_ramdisk_client_rifclx786/systemc/src/frontend/wrapper/processEDGRep.cpp:2257: int processOneFunction(trModuleT&, const char*, a_routine_ptr): Assertion `il_func->memory_region != ((a_memory_region_number)0)' failed.
+xmsc_run: *E,TBBLDF: Failed to generate object ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_model.o
+
+xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
+TOOL:   xrun(64)        24.09-s004: Exiting on Nov 28, 2025 at 14:16:29 CET  (total: 00:00:04)
+
 
 V3
 
