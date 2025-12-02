@@ -1,5 +1,19 @@
 单纯有个txt方便建文件夹
 方便交流
+V10.1 test error
+"/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
+          tandalone/verilator_include/verilated_funcs.h", line 343: warning:
+          statement is unreachable
+      return 0;
+      ^
+
+"$TESTDIR/
+          ../sdram/../sim/../sdram/sdram_model.cpp", line 59: error: call of an
+          object of a class type without appropriate operator() or conversion
+          functions to pointer-to-function type
+    msg << "sdram_model constructed: " << name();
+
+
 V9
 xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,229|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
     $cast(tr,arg);
