@@ -1,5 +1,18 @@
 单纯有个txt方便建文件夹
 方便交流
+
+V10.2 plan B for skip model
+ld: ../sdram/sdram_model.o: in function `F_sdram_model(char const*)':
+sdram_model.cpp:(.text+0x16): multiple definition of `F_sdram_model(char const*)'; ./xcelium.d/run.lnx8664.24.09.d/xmsc_run/xmsc_obj/sdram_dpi_bridge.o:/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/../sdram/sdram_model.h:75: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [xcelium.d/run.lnx8664.24.09.d/xmsc_run/Makefile.xmsc:691: /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/librun.so] Error 1
+xmsc_run: *E,TBBLDF: Failed to build test library
+          /homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sim/./xcelium.d/run.lnx8664.24.09.d/librun.so
+
+xrun: *E,CCERR: Error during cc compilation (status 1), exiting.
+
+
+
 V10.1 test error
 "/homes/hai04458/VP/git/virtual-prototyping/open_source_example/SDRAMmodel/sc-s
           tandalone/verilator_include/verilated_funcs.h", line 343: warning:
