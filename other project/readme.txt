@@ -1,6 +1,44 @@
 单纯有个txt方便建文件夹
 方便交流
+V11.2 
+DPI: sdram_model__getScopeByName called with path: sdram_tb_top.sdram_wrap.sdram_model_inst
+DPI: sdram_model__getScopeByName: found instance at 5bfe240
+DPI: sdram_model__linkSvScope called
+DPI: sdram_model__linkSvScope: linked SV scope to SystemC model
+<message ctxt="reporter" kind="UVM_INFO" id="sdram_tb_top.sdram_vif.link_instance" location="../sdram/sdram_model_if.sv:40" verbosity="UVM_LOW" time="0">UVM_INFO ../sdram/sdram_model_if.sv(40) @ 0: reporter [sdram_tb_top.sdram_vif.link_instance] Linked to SDRAM SystemC instance 
+<message ctxt="reporter" kind="UVM_INFO" id="sdram_tb_top.sdram_vif.link_instance" location="../sdram/sdram_model_if.sv:40" verbosity="UVM_LOW" time="0">sdram_tb_top.sdram_wrap.sdram_model_inst
+
+<message ctxt="reporter" kind="UVM_INFO" id="RNTST" location=":0" verbosity="UVM_LOW" time="0">UVM_INFO @ 0: reporter [RNTST] Running test sdram_test...
+stop -create -name Randomize -randomize
+Created stop Randomize
+
+<message ctxt="uvm_test_top.env.agent.mon" kind="UVM_FATAL" id="uvm_test_top.env.agent.mon" location="../sdram/sdram_pkg.sv:103" verbosity="UVM_NONE" time="0">UVM_FATAL ../sdram/sdram_pkg.sv(103) @ 0: uvm_test_top.env.agent.mon [uvm_test_top.env.agent.mon] Virtual interface not set in monitor
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    2
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[RNTST]     1
+[sdram_tb_top.sdram_vif.link_instance]     1
+[uvm_test_top.env.agent.mon]     1
+Simulation complete via $finish(1) at time 0 FS + 33
+/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_report_object.svh:292     $finish;
 V11.1 Xcelium
+AN: path error in sdram_model_wrapper.sv
 SVSEED default: 1
 
 Info: SDRAM_MODEL: sdram_model constructed: sdram_tb_top.sdram_wrap.sdram_model_inst
