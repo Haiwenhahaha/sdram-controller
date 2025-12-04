@@ -1,5 +1,52 @@
 单纯有个txt方便建文件夹
 方便交流
+V11.1 Xcelium
+SVSEED default: 1
+
+Info: SDRAM_MODEL: sdram_model constructed: sdram_tb_top.sdram_wrap.sdram_model_inst
+xcelium> 
+xcelium> source /sw/CDS/XCELIUM_24_09_004/tools/xcelium/files/xmsimrc
+xcelium> source /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm sdram_tb_top.clk
+Created probe 1
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (24.09-s004)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+DPI: sdram_model__getScopeByName called with path: sdram_tb_top.sdram_wrap.unmblk1.sdram_model_inst
+DPI: sdram_model__getScopeByName: instance not found: sdram_tb_top.sdram_wrap.unmblk1.sdram_model_inst
+<message ctxt="reporter" kind="UVM_FATAL" id="sdram_tb_top.sdram_vif.link_instance" location="../sdram/sdram_model_if.sv:37" verbosity="UVM_NONE" time="0">UVM_FATAL ../sdram/sdram_model_if.sv(37) @ 0: reporter [sdram_tb_top.sdram_vif.link_instance] 
+<message ctxt="reporter" kind="UVM_FATAL" id="sdram_tb_top.sdram_vif.link_instance" location="../sdram/sdram_model_if.sv:37" verbosity="UVM_NONE" time="0">SDRAM SystemC instance sdram_tb_top.sdram_wrap.unmblk1.sdram_model_inst not found
+
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    0
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[sdram_tb_top.sdram_vif.link_instance]     1
+Simulation complete via $finish(1) at time 0 FS + 0
+/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_report_object.svh:292     $finish;
+xcelium> 
 
 V10.3 h no SC_MODULE_EXPORT
 xmelab: symbol lookup error: ./xcelium.d/run.lnx8664.24.09.d/librun.so: undefined symbol: _ZN12VlThreadPoolC1EP16VerilatedContextj
