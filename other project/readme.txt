@@ -1,5 +1,29 @@
 单纯有个txt方便建文件夹
 方便交流
+V11.4 xcelium cashs. 
+DPI: sdram_model__getScopeByName called with path: sdram_tb_top.sdram_wrap.sdram_model_inst
+DPI: sdram_model__getScopeByName: found instance at 62b21d0
+DPI: sdram_model__linkSvScope called
+DPI: sdram_model__linkSvScope: linked SV scope to SystemC model
+UVM_INFO ../sdram/sdram_model_if.sv(40) @ 0: reporter [sdram_tb_top.sdram_vif.link_instance] Linked to SDRAM SystemC instance sdram_tb_top.sdram_wrap.sdram_model_inst
+UVM_INFO @ 0: reporter [RNTST] Running test sdram_test...
+UVM_INFO ../sdram/sdram_pkg.sv(236) @ 0: uvm_test_top [uvm_test_top] Successfully got vif from config_db
+UVM_INFO ../sdram/sdram_pkg.sv(141) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] agent.end_of_elaboration_phase: checking vif (vif=null)
+UVM_WARNING ../sdram/sdram_pkg.sv(143) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] agent.vif is null, trying to get from config_db as fallback
+UVM_INFO ../sdram/sdram_pkg.sv(150) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] Successfully got vif from config_db in agent.end_of_elaboration_phase
+UVM_INFO ../sdram/sdram_pkg.sv(154) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] Setting drv.vif and mon.vif from agent.vif (vif=virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(187) @ 0: uvm_test_top.env [uvm_test_top.env] env.end_of_elaboration_phase: checking vif (vif=null)
+UVM_WARNING ../sdram/sdram_pkg.sv(189) @ 0: uvm_test_top.env [uvm_test_top.env] env.vif is null, trying to get from config_db as fallback
+UVM_INFO ../sdram/sdram_pkg.sv(196) @ 0: uvm_test_top.env [uvm_test_top.env] Successfully got vif from config_db in env.end_of_elaboration_phase
+UVM_INFO ../sdram/sdram_pkg.sv(200) @ 0: uvm_test_top.env [uvm_test_top.env] Setting agent.vif from env.vif BEFORE super (agent.vif will be set to virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(247) @ 0: uvm_test_top [uvm_test_top] Setting env.vif from test.vif (vif=virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(252) @ 0: uvm_test_top [uvm_test_top] Successfully set env.vif (env.vif=virtual interface sdram_model_if@222_1)
+
+Info: SDRAM_MODEL: Command queued: cmd=7 addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+xmsim: *F,INVDIS: The import task sdram_model__apply_command returned a value other than 1 or 0.
+
+
+
 V11.2 
 DPI: sdram_model__getScopeByName called with path: sdram_tb_top.sdram_wrap.sdram_model_inst
 DPI: sdram_model__getScopeByName: found instance at 5bfe240
