@@ -1,57 +1,5 @@
 xrun: *W,BADPRF: The -linedebug option may have an adverse performance impact.
 xrun: *W,MESSQ: Cannot specify both the -messages and -q options on the command line.  The -q option will be used.
-	  string parent = "sdram_tb_top.sdram_wrap";
-	                |
-xmvlog: *W,VARIST (../sdram/sdram_model_wrapper.sv,17|17): Local static variable with initializer requires 'static' keyword.
-      seq.randomize() with { num_txns == 4; };
-                  |
-xmvlog: *W,FUNTSK (../sdram/sdram_pkg.sv,243|18): function called as a task without void'().
-
-Info: SDRAM_MODEL: sdram_model constructed: sdram_tb_top.sdram_wrap.sdram_model_inst
-	Top level design units:
-		uvm_pkg
-		cdns_uvmapi
-		cdns_assert2uvm_pkg
-		cdns_uvm_pkg
-		sdram_types_pkg
-		sdram_pkg
-		sdram_tb_top
-    $cast(arg, tr); // Need run-time casting because at compile time T1 can be scalar.
-            |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,229|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(tr,arg); 
-               |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,240|15): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(arg, tr); // Need run-time casting because at compile time T1 can be scalar.
-            |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,250|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(tr, arg);
-                |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,263|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(tr,arg);
-               |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,273|15): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(tr, arg);
-                |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,285|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(arg,req);
-            |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,295|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(rsp,res);
-                |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,297|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(arg,req);
-            |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,308|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(rsp,res);
-                |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,310|16): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-    $cast(arg, tr); // Need run-time casting because at compile time T1 can be scalar.
-            |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_tlm_ifs.svh,319|12): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
-      $cast(tmp, t);
-                 |
-xmelab: *W,NAGCST (/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/tlm1/uvm_analysis_port.svh,102|17): An aggregate datatype is not allowed here by SystemVerilog language rules (this $cast will raise a simulation-time error).
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 SVSEED default: 1
 
@@ -62,9 +10,10 @@ Relinquished control to SimVision...
 xcelium> 
 xcelium> source /sw/CDS/XCELIUM_24_09_004/tools/xcelium/files/xmsimrc
 xcelium> source /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
-xcelium> # Restoring simulation environment...
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm sdram_tb_top.sdram_vif.sdram_model__apply_command.addr sdram_tb_top.sdram_vif.sdram_model__apply_command.burst_len sdram_tb_top.sdram_vif.sdram_model__apply_command.cmd sdram_tb_top.sdram_vif.sdram_model__apply_command.data sdram_tb_top.sdram_vif.sdram_model__apply_command.is_write sdram_tb_top.sdram_vif.sdram_model__apply_command.scope sdram_tb_top.sdram_vif.clk sdram_tb_top.sdram_vif.model_path sdram_tb_top.sdram_vif.rsp_event sdram_tb_top.sdram_vif.rsp_mbx sdram_tb_top.sdram_vif.scope_h -depth 2 -all
+Created probe 1
 xcelium> run
 ----------------------------------------------------------------
 CDNS-UVM-1.1d (24.09-s004)
@@ -74,22 +23,69 @@ CDNS-UVM-1.1d (24.09-s004)
 (C) 2011-2013 Cypress Semiconductor Corp.
 ----------------------------------------------------------------
 DPI: sdram_model__getScopeByName called with path: sdram_tb_top.sdram_wrap.sdram_model_inst
-DPI: sdram_model__getScopeByName: found instance at 54b8c30
+DPI: sdram_model__getScopeByName: found instance at 5916680
 DPI: sdram_model__linkSvScope called
 DPI: sdram_model__linkSvScope: linked SV scope to SystemC model
-UVM_INFO ../sdram/sdram_model_if.sv(40) @ 0: reporter [sdram_tb_top.sdram_vif.link_instance] Linked to SDRAM SystemC instance sdram_tb_top.sdram_wrap.sdram_model_inst
+UVM_INFO ../sdram/sdram_model_if.sv(42) @ 0: reporter [sdram_tb_top.sdram_vif.link_instance] Linked to SDRAM SystemC instance sdram_tb_top.sdram_wrap.sdram_model_inst
 UVM_INFO @ 0: reporter [RNTST] Running test sdram_test...
-UVM_INFO ../sdram/sdram_pkg.sv(220) @ 0: uvm_test_top [uvm_test_top] Successfully got vif from config_db
-UVM_INFO ../sdram/sdram_pkg.sv(172) @ 0: uvm_test_top.env [uvm_test_top.env] env.end_of_elaboration_phase: checking vif (vif=null)
-UVM_WARNING ../sdram/sdram_pkg.sv(174) @ 0: uvm_test_top.env [uvm_test_top.env] env.vif is null, trying to get from config_db as fallback
-UVM_INFO ../sdram/sdram_pkg.sv(181) @ 0: uvm_test_top.env [uvm_test_top.env] Successfully got vif from config_db in env.end_of_elaboration_phase
-UVM_INFO ../sdram/sdram_pkg.sv(185) @ 0: uvm_test_top.env [uvm_test_top.env] Setting agent.vif from env.vif (agent.vif will be set to virtual interface sdram_model_if@222_1)
-UVM_INFO ../sdram/sdram_pkg.sv(231) @ 0: uvm_test_top [uvm_test_top] Setting env.vif from test.vif (vif=virtual interface sdram_model_if@222_1)
-UVM_INFO ../sdram/sdram_pkg.sv(236) @ 0: uvm_test_top [uvm_test_top] Successfully set env.vif (env.vif=virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(236) @ 0: uvm_test_top [uvm_test_top] Successfully got vif from config_db
+UVM_INFO ../sdram/sdram_pkg.sv(141) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] agent.end_of_elaboration_phase: checking vif (vif=null)
+UVM_WARNING ../sdram/sdram_pkg.sv(143) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] agent.vif is null, trying to get from config_db as fallback
+UVM_INFO ../sdram/sdram_pkg.sv(150) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] Successfully got vif from config_db in agent.end_of_elaboration_phase
+UVM_INFO ../sdram/sdram_pkg.sv(154) @ 0: uvm_test_top.env.agent [uvm_test_top.env.agent] Setting drv.vif and mon.vif from agent.vif (vif=virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(187) @ 0: uvm_test_top.env [uvm_test_top.env] env.end_of_elaboration_phase: checking vif (vif=null)
+UVM_WARNING ../sdram/sdram_pkg.sv(189) @ 0: uvm_test_top.env [uvm_test_top.env] env.vif is null, trying to get from config_db as fallback
+UVM_INFO ../sdram/sdram_pkg.sv(196) @ 0: uvm_test_top.env [uvm_test_top.env] Successfully got vif from config_db in env.end_of_elaboration_phase
+UVM_INFO ../sdram/sdram_pkg.sv(200) @ 0: uvm_test_top.env [uvm_test_top.env] Setting agent.vif from env.vif BEFORE super (agent.vif will be set to virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(247) @ 0: uvm_test_top [uvm_test_top] Setting env.vif from test.vif (vif=virtual interface sdram_model_if@222_1)
+UVM_INFO ../sdram/sdram_pkg.sv(252) @ 0: uvm_test_top [uvm_test_top] Successfully set env.vif (env.vif=virtual interface sdram_model_if@222_1)
 stop -create -name Randomize -randomize
 Created stop Randomize
 
-UVM_FATAL ../sdram/sdram_pkg.sv(103) @ 0: uvm_test_top.env.agent.mon [uvm_test_top.env.agent.mon] Virtual interface not set in monitor
+
+Info: SDRAM_MODEL: Command queued: cmd=7 addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+
+Info: SDRAM_MODEL: Processing command: cmd=7 addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+
+Info: SDRAM_MODEL: Command queued: cmd=2 addr=0xdceb6e1c6d619a6 data=0x49607c0fb745463c write=0 len=6
+
+Info: SDRAM_MODEL: Command queued: cmd=2 addr=0x3c7a4c39696032cd data=0xcfc220fe6de4b4e4 write=0 len=5
+
+Info: SDRAM_MODEL: Command queued: cmd=7 addr=0x65ee8a5c1d95cce1 data=0x5269ef303033726c write=0 len=8
+DPI WARNING: svSetScope returned null, but sv_scope is not null
+DPI: About to call sv_rsp_from_sdram with addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+UVM_INFO ../sdram/sdram_model_if.sv(95) @ 20000: reporter [sdram_tb_top.sdram_vif.sv_rsp_from_sdram] Response from SystemC model addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+DPI: sv_rsp_from_sdram call completed successfully
+DPI: sdram_notify_sv_response: notified SV with addr=0x79418e8d296ad6d4 data=0x73d6f7f8d5b8671f write=0 len=11
+
+Info: SDRAM_MODEL: Command processing completed, response sent to SV
+
+Info: SDRAM_MODEL: Processing command: cmd=2 addr=0xdceb6e1c6d619a6 data=0x49607c0fb745463c write=0 len=6
+DPI: About to call sv_rsp_from_sdram with addr=0xdceb6e1c6d619a6 data=0x49607c0fb745463c write=0 len=6
+UVM_INFO ../sdram/sdram_model_if.sv(95) @ 40000: reporter [sdram_tb_top.sdram_vif.sv_rsp_from_sdram] Response from SystemC model addr=0xdceb6e1c6d619a6 data=0x49607c0fb745463c write=0 len=6
+DPI: sv_rsp_from_sdram call completed successfully
+DPI: sdram_notify_sv_response: notified SV with addr=0xdceb6e1c6d619a6 data=0x49607c0fb745463c write=0 len=6
+
+Info: SDRAM_MODEL: Command processing completed, response sent to SV
+
+Info: SDRAM_MODEL: Processing command: cmd=2 addr=0x3c7a4c39696032cd data=0xcfc220fe6de4b4e4 write=0 len=5
+
+Info: SDRAM_MODEL: Reset released at time 50 ns
+DPI: About to call sv_rsp_from_sdram with addr=0x3c7a4c39696032cd data=0xcfc220fe6de4b4e4 write=0 len=5
+UVM_INFO ../sdram/sdram_model_if.sv(95) @ 60000: reporter [sdram_tb_top.sdram_vif.sv_rsp_from_sdram] Response from SystemC model addr=0x3c7a4c39696032cd data=0xcfc220fe6de4b4e4 write=0 len=5
+DPI: sv_rsp_from_sdram call completed successfully
+DPI: sdram_notify_sv_response: notified SV with addr=0x3c7a4c39696032cd data=0xcfc220fe6de4b4e4 write=0 len=5
+
+Info: SDRAM_MODEL: Command processing completed, response sent to SV
+
+Info: SDRAM_MODEL: Processing command: cmd=7 addr=0x65ee8a5c1d95cce1 data=0x5269ef303033726c write=0 len=8
+DPI: About to call sv_rsp_from_sdram with addr=0x65ee8a5c1d95cce1 data=0x5269ef303033726c write=0 len=8
+UVM_INFO ../sdram/sdram_model_if.sv(95) @ 80000: reporter [sdram_tb_top.sdram_vif.sv_rsp_from_sdram] Response from SystemC model addr=0x65ee8a5c1d95cce1 data=0x5269ef303033726c write=0 len=8
+DPI: sv_rsp_from_sdram call completed successfully
+DPI: sdram_notify_sv_response: notified SV with addr=0x65ee8a5c1d95cce1 data=0x5269ef303033726c write=0 len=8
+
+Info: SDRAM_MODEL: Command processing completed, response sent to SV
+UVM_INFO /sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 1000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 
 --- UVM Report catcher Summary ---
 
@@ -104,16 +100,19 @@ Number of caught UVM_WARNING reports :    0
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :    8
-UVM_WARNING :    1
+UVM_INFO :   16
+UVM_WARNING :    2
 UVM_ERROR :    0
-UVM_FATAL :    1
+UVM_FATAL :    0
 ** Report counts by id
 [RNTST]     1
+[TEST_DONE]     1
 [sdram_tb_top.sdram_vif.link_instance]     1
+[sdram_tb_top.sdram_vif.sv_rsp_from_sdram]     4
 [uvm_test_top]     3
 [uvm_test_top.env]     4
-[uvm_test_top.env.agent.mon]     1
-Simulation complete via $finish(1) at time 0 FS + 34
-/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_report_object.svh:292     $finish;
-xcelium> 
+[uvm_test_top.env.agent]     4
+Simulation complete via $finish(1) at time 1 US + 46
+/sw/CDS/XCELIUM_24_09_004/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> ^C
+xcelium> exit
