@@ -1,0 +1,31 @@
+
+
+
+RTL toplevel_tb
+V1_1211
+xmvlog(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+    .full          (unused_fifo_full),
+                                   |
+xmvlog: *E,DUPIMP (../../rtl/toplevel.v,128|35): Identifier 'unused_fifo_full', implicitly declared here, first as a wire, is subsequently redeclared.
+wire unused_fifo_full;
+                    |
+xmvlog: *E,DUPIDN (../../rtl/toplevel.v,132|20): identifier 'unused_fifo_full' previously declared in file ../../rtl/toplevel.v at line 128 [12.5(IEEE)].
+xmvlog(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+        test_sdram_controller();
+                              |
+xmvlog: *W,TMTPAR (../../bench/toplevel_tb.v,95|30): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
+        test_fifo();
+                  |
+xmvlog: *W,TMTPAR (../../bench/toplevel_tb.v,98|18): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
+        test_user_interface();
+                            |
+xmvlog: *W,TMTPAR (../../bench/toplevel_tb.v,101|28): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
+        $display("[TEST %0d] SDRAM Controller Test Started", test_num);
+               |
+xmvlog: *E,EXPENT (../../bench/toplevel_tb.v,126|15): expecting the keyword 'endtask' [10.2.1(IEEE)].
+        $display("[TEST %0d] FIFO Test Started", test_num);
+               |
+xmvlog: *E,EXPENT (../../bench/toplevel_tb.v,162|15): expecting the keyword 'endtask' [10.2.1(IEEE)].
+        $display("[TEST %0d] User Interface Test Started", test_num);
+               |
+xmvlog: *E,EXPENT (../../bench/toplevel_tb.v,191|15): expecting the keyword 'endtask' [10.2.1(IEEE)].
