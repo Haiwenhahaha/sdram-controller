@@ -2,6 +2,44 @@
 
 
 RTL toplevel_tb
+
+V1.2_1211
+
+    vlog_tb_utils vlog_tb_utils0();
+                               |
+xmelab: *E,CUVMUR (/homes/hai04458/VP/git/virtual-prototyping/open_source_example/sdram-controller/bench/toplevel_tb.v,17|31): instance 'toplevel_tb.vlog_tb_utils0' of design unit 'vlog_tb_utils' is unresolved in 'xm_sim.toplevel_tb:module'.
+pll_100m pll_100mi (
+                 |
+xmelab: *E,CUVMUR (/homes/hai04458/VP/git/virtual-prototyping/open_source_example/sdram-controller/rtl/toplevel.v,56|17): instance 'toplevel_tb.dut.pll_100mi' of design unit 'pll_100m' is unresolved in 'xm_sim.toplevel:module'.
+pll_1m pll_1mi (
+             |
+xmelab: *E,CUVMUR (/homes/hai04458/VP/git/virtual-prototyping/open_source_example/sdram-controller/rtl/toplevel.v,61|13): instance 'toplevel_tb.dut.pll_1mi' of design unit 'pll_1m' is unresolved in 'xm_sim.toplevel:module'.
+xmelab: *F,MAXERR: maximum error count reached (3).
+
+
+rtl_ver="
+
+    ../../rtl/toplevel.v
+"
+#    ../../rtl/sdram_controller.v    double_click
+tb_ver="
+	../../bench/toplevel_tb.v
+"
+#	../../bench/toplevel_tb.v    double_click_tb  sdram_controller_tb
+xmvlog -work xm_sim -cdslib scripts/cds.lib -nolog -errormax 3 -update -linedebug $rtl_ver
+xmvlog -work xm_sim -cdslib scripts/cds.lib -nolog -errormax 3 -update -linedebug $tb_ver
+
+
+xmelab -work xm_sim -cdslib scripts/cds.lib -nolog -errormax 3 -access +wc -status  xm_sim.toplevel_tb:module &
+sleep 2
+
+xmsim  -gui         -cdslib scripts/cds.lib -nolog -messages -status -extassertmsg  xm_sim.toplevel_tb:module &
+
+
+
+
+
+
 V1_1211
 xmvlog(64): 24.09-s004: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
     .full          (unused_fifo_full),
